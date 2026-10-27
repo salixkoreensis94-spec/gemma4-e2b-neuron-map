@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it using this metadata."
+title: "Gemma 4 E2B neuron map"
+authors:
+  - family-names: "Ryou"
+    given-names: "Jiho"
+date-released: 2026-10-27
+version: "1.0.0"
+license: Apache-2.0

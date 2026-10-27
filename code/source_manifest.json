@@ -1,0 +1,289 @@
+[
+  {
+    "source": "S2/tools/engine.py",
+    "original_sha256": "a13afa36d3fc04d5808c64e49f0d9b8efa3320730d00302652669ca450282489",
+    "path": "code/s2/engine.py",
+    "release_sha256": "faa1d2db97455d6bd81ce30dbfc0e6d018137c72cd833ddfb564c24bb8599498",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S2/tools/kernels.py",
+    "original_sha256": "fdd46f3dee8c42b865633aeda2afdf2a43b12df941b6ce707f308a20d2350367",
+    "path": "code/s2/kernels.py",
+    "release_sha256": "fdd46f3dee8c42b865633aeda2afdf2a43b12df941b6ce707f308a20d2350367",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S2/tools/metrics.py",
+    "original_sha256": "1c9953bf2e96590dddc009db1c269e98b26430ccb36811febdbdeddef61208f2",
+    "path": "code/s2/metrics.py",
+    "release_sha256": "1c9953bf2e96590dddc009db1c269e98b26430ccb36811febdbdeddef61208f2",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S2/tools/run_screen.py",
+    "original_sha256": "92b31bb22635263457e2fac57a04d7cfc04bf660445d044ab776a77f4bcebbd4",
+    "path": "code/s2/run_screen.py",
+    "release_sha256": "02e2745f7dce0283a57c04ebba5d3b2449fb61c12b5be983158ccb59c0c3b13f",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S2/tools/validate_engine.py",
+    "original_sha256": "f471cd3019abccde44321ae4cdba966ef1d06fb96b6aa30919b4e404632cec7a",
+    "path": "code/s2/validate_engine.py",
+    "release_sha256": "957ba4f83b34ac4b90ce37ffad35223a70a9b893a3a9bd26190f8d5808f16cec",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S2/tools/postprocess.py",
+    "original_sha256": "24f5c7ca5ec6a151dcca5f19ce744ef1c4627bd176474935551de28154a892b4",
+    "path": "code/s2/postprocess.py",
+    "release_sha256": "a3fba95fc86e9542cb1f19e23367b85087c97077a28f77ba68170d199a93b4a7",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S2/tools/validate_allpos.py",
+    "original_sha256": "b87fe3f4b55ad5fce46d97778f63aeea3ba51885c95615ccee2176561284966a",
+    "path": "code/s2/validate_allpos.py",
+    "release_sha256": "b87fe3f4b55ad5fce46d97778f63aeea3ba51885c95615ccee2176561284966a",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S2/tools/independent_metrics.py",
+    "original_sha256": "e4b08da34c746d7c5908f936bef02493be5df3eb5d4abd51f01fb9865a94ee20",
+    "path": "code/s2/independent_metrics.py",
+    "release_sha256": "e4b08da34c746d7c5908f936bef02493be5df3eb5d4abd51f01fb9865a94ee20",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3b/tools/s2_engine.py",
+    "original_sha256": "a13afa36d3fc04d5808c64e49f0d9b8efa3320730d00302652669ca450282489",
+    "path": "code/push/s2_engine.py",
+    "release_sha256": "faa1d2db97455d6bd81ce30dbfc0e6d018137c72cd833ddfb564c24bb8599498",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3b/tools/generate_engine.py",
+    "original_sha256": "3082ecdab3679abe03082cc6b13d08581bbb775c6c0a57ae4f9995dba2d999cd",
+    "path": "code/push/generate_engine.py",
+    "release_sha256": "d5ed5eb7ef224a159752bf32c0ff66a9f3ec5545bfa626f585bbc7c99a3d22c6",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3b/tools/kernels.py",
+    "original_sha256": "6c27b1cb8fb343b543c9c8a3cb22219fe59bf528e460f5806169cb9bc4f8dff4",
+    "path": "code/push/kernels.py",
+    "release_sha256": "6c27b1cb8fb343b543c9c8a3cb22219fe59bf528e460f5806169cb9bc4f8dff4",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3b/tools/exact_linear.py",
+    "original_sha256": "9f03e38efd085675fcea0d7bf3f19f90b2ddb97ed3a79eeecbd7403750de5949",
+    "path": "code/push/exact_linear.py",
+    "release_sha256": "9f03e38efd085675fcea0d7bf3f19f90b2ddb97ed3a79eeecbd7403750de5949",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3b/tools/diagnose_numerics.py",
+    "original_sha256": "2272851333ee190f5ae59446657871632d3ec3c55af9324fa182b3923934866c",
+    "path": "code/push/diagnose_numerics.py",
+    "release_sha256": "2272851333ee190f5ae59446657871632d3ec3c55af9324fa182b3923934866c",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3b/tools/measures.py",
+    "original_sha256": "b590bb4a25f32385721a42c3a4e8cc12ced5d0fd193edc5e10aabcfaf1a65ea7",
+    "path": "code/push/measures.py",
+    "release_sha256": "b590bb4a25f32385721a42c3a4e8cc12ced5d0fd193edc5e10aabcfaf1a65ea7",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3b/tools/measures_extra.py",
+    "original_sha256": "0507907c932b6d816c0432652561ab829eaf2a03ad2657e6827114387e709a0b",
+    "path": "code/push/measures_extra.py",
+    "release_sha256": "0507907c932b6d816c0432652561ab829eaf2a03ad2657e6827114387e709a0b",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3b/tools/diagnose_checks.py",
+    "original_sha256": "ff2b992bdbc69caf415b1b9732be1da70a87e03f348ceb68e9f1731afdb6ea2a",
+    "path": "code/push/diagnose_checks.py",
+    "release_sha256": "7d4399e6d0393f780fcfe07c613b26aad06da5ae28fdb959189c3fe296e29535",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3b/tools/build_directions.py",
+    "original_sha256": "30fdcbb810c01118048e718d9e366ee086ee9fa1cc73146501f635babaffe3bc",
+    "path": "code/push/build_directions.py",
+    "release_sha256": "30fdcbb810c01118048e718d9e366ee086ee9fa1cc73146501f635babaffe3bc",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3b/tools/run.py",
+    "original_sha256": "5d8bace1f705f37b62bed53ff3d2d55dcf3ece84661dee75a717bf44189904f1",
+    "path": "code/push/run.py",
+    "release_sha256": "59570c26ef533b4c80d296e128c37be8abb9b6dc929a1442b15175225fd24259",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3b/tools/validate.py",
+    "original_sha256": "e452308779104a0f90aaf7f4432b94f40e0f4e9a6ddbd1b98a38a14b7d6135bc",
+    "path": "code/push/validate.py",
+    "release_sha256": "4ca0e9c88045f01fa463c57c4d83a728fb3df1e5367d8d197aa6d3c5f495d701",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S6/tools/b_lens.py",
+    "original_sha256": "338ce57983538b0bab0c5889ae31dbc90a8fe06a9615a98badd6074900df6c25",
+    "path": "code/s6/b_lens.py",
+    "release_sha256": "6c24089be2e28e5615614d7a37b5fec93d3feffcd44a7286e8a6852a78af6992",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S6/tools/b_compute.py",
+    "original_sha256": "addd4d972e9ac8c5d4398c1ff2cfe4206683a965c10b682e08b17c1ad628ca0c",
+    "path": "code/s6/b_compute.py",
+    "release_sha256": "593d2c8402c90e5c52abf937a98b22243c1083a595b54f4c0084267e0af2b679",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S6/tools/b_common.py",
+    "original_sha256": "3e3d4b474524029f9a35c873fdfd06eb888416362da0b938bf26d4ed43afefcb",
+    "path": "code/s6/b_common.py",
+    "release_sha256": "8b9ef0908ff3dcf86819367b0601fe6401f2a78408dead5a5f5984eae117351a",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S6/tools/style_classifier.py",
+    "original_sha256": "aec79ebcb9cca10df92ed0ff33ef4f3472bd01695b6f7d0a1436a14bf96dcf97",
+    "path": "code/s6/style_classifier.py",
+    "release_sha256": "aec79ebcb9cca10df92ed0ff33ef4f3472bd01695b6f7d0a1436a14bf96dcf97",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S6/tools/b_report.py",
+    "original_sha256": "993023193927d194fe0045c64db6769445cd4f5edd7c7844f29bee4d0e8a4ff0",
+    "path": "code/s6/b_report.py",
+    "release_sha256": "691c136d0b20ebb299f69aa39d0ff1e54391665d67657815470bfe88b72c4fcb",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S6/tools/b_verify.py",
+    "original_sha256": "1d50766e71648e798b226e8d7fbadf50d1806c813fe4fa434af74be80ccbcd87",
+    "path": "code/s6/b_verify.py",
+    "release_sha256": "1d50766e71648e798b226e8d7fbadf50d1806c813fe4fa434af74be80ccbcd87",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S6/tools/b_driver.py",
+    "original_sha256": "3b4c1784698ef07d2a4c5ff15e769efb3d589313cac9092acf8639e246015e04",
+    "path": "code/s6/b_driver.py",
+    "release_sha256": "3b4c1784698ef07d2a4c5ff15e769efb3d589313cac9092acf8639e246015e04",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S6/tools/prepare_b_tokens.py",
+    "original_sha256": "ebbcc70898fdbcd9826600a9cf335dbd15f03aa93c17b806a289c92f8eceef01",
+    "path": "code/s6/prepare_b_tokens.py",
+    "release_sha256": "5c47ed164851b9b27163ab809ecaed336107ef5cbdbe11bda0eb0e33286b3b2d",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3/tools/run_arms.py",
+    "original_sha256": "4a92215bb69042e1f2cf9eafda72ed2bbce77af6959c16f2d1085fd5f718b7c1",
+    "path": "code/s3/run_arms.py",
+    "release_sha256": "c3d455d67fbab8747957de1ec4cd1404c281250cf32d8c159f6d3cbbb8b6455f",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3/tools/generate_engine.py",
+    "original_sha256": "17d8ff589953e186c794e7de44bfb06f3c90b7f56ce4effb1c197f5aac8f8113",
+    "path": "code/s3/generate_engine.py",
+    "release_sha256": "c5f637cfb06af7c4f9829492c71e953d681986cd43bc6b60d7c2e720eeaf5ccd",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3/tools/measures.py",
+    "original_sha256": "b590bb4a25f32385721a42c3a4e8cc12ced5d0fd193edc5e10aabcfaf1a65ea7",
+    "path": "code/s3/measures.py",
+    "release_sha256": "b590bb4a25f32385721a42c3a4e8cc12ced5d0fd193edc5e10aabcfaf1a65ea7",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3/tools/kernels.py",
+    "original_sha256": "6c27b1cb8fb343b543c9c8a3cb22219fe59bf528e460f5806169cb9bc4f8dff4",
+    "path": "code/s3/kernels.py",
+    "release_sha256": "6c27b1cb8fb343b543c9c8a3cb22219fe59bf528e460f5806169cb9bc4f8dff4",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3/tools/s2_engine.py",
+    "original_sha256": "a13afa36d3fc04d5808c64e49f0d9b8efa3320730d00302652669ca450282489",
+    "path": "code/s3/s2_engine.py",
+    "release_sha256": "faa1d2db97455d6bd81ce30dbfc0e6d018137c72cd833ddfb564c24bb8599498",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3/tools/exact_linear.py",
+    "original_sha256": "9f03e38efd085675fcea0d7bf3f19f90b2ddb97ed3a79eeecbd7403750de5949",
+    "path": "code/s3/exact_linear.py",
+    "release_sha256": "9f03e38efd085675fcea0d7bf3f19f90b2ddb97ed3a79eeecbd7403750de5949",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3/tools/diagnose_numerics.py",
+    "original_sha256": "2272851333ee190f5ae59446657871632d3ec3c55af9324fa182b3923934866c",
+    "path": "code/s3/diagnose_numerics.py",
+    "release_sha256": "2272851333ee190f5ae59446657871632d3ec3c55af9324fa182b3923934866c",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3/tools/diagnose_checks.py",
+    "original_sha256": "ff2b992bdbc69caf415b1b9732be1da70a87e03f348ceb68e9f1731afdb6ea2a",
+    "path": "code/s3/diagnose_checks.py",
+    "release_sha256": "7d4399e6d0393f780fcfe07c613b26aad06da5ae28fdb959189c3fe296e29535",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S1/tools/s1b.cpp",
+    "original_sha256": "71a326efc34b7c1040a393cee9f8b74eb886a1a9fab77d6f6712d7e5ffa096f2",
+    "path": "code/lens/lens.cpp",
+    "release_sha256": "0d3783b9dd279b1153de7a29536d84185ace1c89130286ec242c3e5944dba9ed",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved. Expose stored calibration/inspection and original random-control construction as explicit reconstruction modes."
+  },
+  {
+    "source": "S3b/tools/tokenize.cpp",
+    "original_sha256": "a21acf9a634bd8686aa30f2d4815786a476e28344779b890622df4f3122c056d",
+    "path": "code/tokenize.cpp",
+    "release_sha256": "f8a982de4671526065642d568e0968734371862fc66be64bec2aab83bdfdb5e8",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S6/tools/tokenize_inputs.cpp",
+    "original_sha256": "7d1c18169dcd6415cc628df3a34de375b8239da17a0528572366e3ce218d51af",
+    "path": "code/tokenize_inputs.cpp",
+    "release_sha256": "568ec05e14fb807abb76fd12a11afd3c64c8cb3774bdb8140ca080abcd5b062c",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+  },
+  {
+    "source": "S3/tools/reference.cpp",
+    "original_sha256": "9f1d6292aa4836fa9dc35ea8f915e611d5691b110f2da081a632934b9632a89b",
+    "path": "code/reference/reference.cpp",
+    "release_sha256": "0da0560e5364bd64cdb5c8b4be73de93e930ef34f697bd44256916bea4f27b85",
+    "changes": "Explicit model configuration and generic BLAS header; numerical behavior retained."
+  },
+  {
+    "source": "S3/tools/export_rope_op.cpp",
+    "original_sha256": "dcf048c1f832f13c12c163098f99821168eb74a8232290cbe5ab77020e866914",
+    "path": "code/reference/export_rope_op.cpp",
+    "release_sha256": "bf94a3cfdb0a486492875be84c2ce2c6e97204128f1b997b5b08b8ceeeac5f66",
+    "changes": "Explicit model configuration and generic BLAS header; numerical behavior retained."
+  },
+  {
+    "source": "S3/tools/export_exp_corrections.cpp",
+    "original_sha256": "e36049873a0743643db0b977e8ff90a356e56d3db5965e4cbf678835fba4d7c2",
+    "path": "code/reference/export_exp_corrections.cpp",
+    "release_sha256": "2ff4f3c4c893dc6ab08e227ae2400a23275b1ba0535002d28fd68c626b1b1d44",
+    "changes": "Explicit model configuration and generic BLAS header; numerical behavior retained."
+  }
+]

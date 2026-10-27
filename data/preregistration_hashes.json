@@ -1,0 +1,37 @@
+[
+  {
+    "source": "S2/RULE.md",
+    "original_sha256": "cf5e6e6a2e559711536177fe53f0f947621b9308fdeea61b42993e3639e4a853",
+    "included_copy": "preregistration/S2/RULE.md",
+    "included_sha256": "cbee0277b2a9460131d07d91580c7c162aed3f12d953dcf42b7cf0252b792ba1",
+    "redacted": true
+  },
+  {
+    "source": "S2/_superseded/token_audit_v1/RULE.md",
+    "original_sha256": "7dce1d22b6528f78d98472ba62a6451153fc784d732ce65b3b6701f148a29da4",
+    "included_copy": "preregistration/S2/_superseded/token_audit_v1/RULE.md",
+    "included_sha256": "c1b8c6868c520c1fc7bf79f371894d9d17e8849baf36e4fc84192916b07a760e",
+    "redacted": true
+  },
+  {
+    "source": "S3/RULE.md",
+    "original_sha256": "5b8875c2b0f5eb0ec8bfcba1f3a2ce3260feb6177a01713508ac09b6452665d8",
+    "included_copy": "preregistration/S3/RULE.md",
+    "included_sha256": "ec4cf6dc2d69df5f37e0a023875f19c8aed59bda7aaa915d33ded1ea4815aaae",
+    "redacted": true
+  },
+  {
+    "source": "S3b/RULE.md",
+    "original_sha256": "195e3aa31af79c5e0ee413751da42a0faaaa45d03f3578e4011517fe49fc688f",
+    "included_copy": "preregistration/S3b/RULE.md",
+    "included_sha256": "1ef44d07e84ade1f81c7ffc279cd17b359273ae7f32480e33e313834c58ac8ac",
+    "redacted": true
+  },
+  {
+    "source": "S6/RULE.md",
+    "original_sha256": "320df4ff3a461b03899e167a2d8035a8f6e6ac9876c4d8c19a1ac76853fc9852",
+    "included_copy": "preregistration/S6/RULE.md",
+    "included_sha256": "4a4741a0bc78276196c5afdbec006443d2c04d7ab8396e017f5203eab28c3eac",
+    "redacted": true
+  }
+]

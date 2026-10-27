@@ -1,0 +1,2030 @@
+{
+  "schema_version": 1,
+  "layer_indexing": "zero based",
+  "insertion_site": "l_out after post-FFN RMSNorm, FFN/PLE residual additions and layer output scaling; every prompt/generated position",
+  "generation_formula": "h_l[position] += dose * stored_vector; generation-ready files are already median-residual-norm scaled",
+  "auxiliary_convention": "raw mean differences and second_person_unit require the conversions in README.md; not directly injected in the reported grids",
+  "norm_computation": "Euclidean norm with float64 accumulation over stored float32 values",
+  "reference_register_vector_included": false,
+  "files": [
+    {
+      "file": "aegyo.dir.L08.npy",
+      "source": "S6/vectors/aegyo.dir.L08.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 8,
+      "construction": "Equal-pair mean of final-reply-token aegyo-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 69.92144775390625,
+      "l2_norm": 69.92144656479202,
+      "sha256": "5f72e5c1694716eca1a3f3c1a77614aa8d92096c526d5534098f754c6a9f4d0e",
+      "used_in": [
+        "S6 dev aegyo.dir.L08"
+      ]
+    },
+    {
+      "file": "aegyo.dir.L08.raw.npy",
+      "source": "S6/vectors/aegyo.dir.L08.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 8,
+      "construction": "Equal-pair mean of final-reply-token aegyo-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 69.92144775390625,
+      "l2_norm": 6.543959991117714,
+      "sha256": "c91e9617f67cbbcff37eec201530d69af8e89e648486018141e3f8af7aca9625",
+      "used_in": [
+        "Construction input for aegyo.dir.L08.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "aegyo.dir.L14.npy",
+      "source": "S6/vectors/aegyo.dir.L14.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 14,
+      "construction": "Equal-pair mean of final-reply-token aegyo-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 64.6662826538086,
+      "l2_norm": 64.66628042683332,
+      "sha256": "6d70e771bb9117d6890febac87b0c871337ce5e99886399037ec5f264558ca32",
+      "used_in": [
+        "S6 dev aegyo.dir.L14"
+      ]
+    },
+    {
+      "file": "aegyo.dir.L14.raw.npy",
+      "source": "S6/vectors/aegyo.dir.L14.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 14,
+      "construction": "Equal-pair mean of final-reply-token aegyo-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 64.6662826538086,
+      "l2_norm": 3.2708615039433426,
+      "sha256": "a5299cc748b1bbe191ecc24b04811caa9fd57ffd9de4d9694c43e44fb7a40f9e",
+      "used_in": [
+        "Construction input for aegyo.dir.L14.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "aegyo.dir.L20.npy",
+      "source": "S6/vectors/aegyo.dir.L20.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 20,
+      "construction": "Equal-pair mean of final-reply-token aegyo-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 67.02741241455078,
+      "l2_norm": 67.02740891795793,
+      "sha256": "29e18a043dce01ba56cca06830a4a683535c6997d7efbf6f2531755c2b7b26e9",
+      "used_in": [
+        "S6 dev aegyo.dir.L20"
+      ]
+    },
+    {
+      "file": "aegyo.dir.L20.raw.npy",
+      "source": "S6/vectors/aegyo.dir.L20.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 20,
+      "construction": "Equal-pair mean of final-reply-token aegyo-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 67.02741241455078,
+      "l2_norm": 3.100915271408409,
+      "sha256": "0c97c1e2afc057c56d2b4d77669e9abc4d315fc30613e594a6c137cdbce9e93e",
+      "used_in": [
+        "Construction input for aegyo.dir.L20.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "aegyo.dir.L27.npy",
+      "source": "S6/vectors/aegyo.dir.L27.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Equal-pair mean of final-reply-token aegyo-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860569767442,
+      "sha256": "aa04fd9823bd06917219d0b5e7aab6d61045484b90771e101a70fdcd24460bc7",
+      "used_in": [
+        "S6 dev aegyo.dir.L27"
+      ]
+    },
+    {
+      "file": "aegyo.dir.L27.raw.npy",
+      "source": "S6/vectors/aegyo.dir.L27.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Equal-pair mean of final-reply-token aegyo-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 3.5810168792479953,
+      "sha256": "c6e65a1cdf724ffa8734f2e38b0ab9578fbe2c42205feb4eb710eb3b682607a4",
+      "used_in": [
+        "Construction input for aegyo.dir.L27.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "aegyo.dir.L31.npy",
+      "source": "S6/vectors/aegyo.dir.L31.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 31,
+      "construction": "Equal-pair mean of final-reply-token aegyo-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 94.81727600097656,
+      "l2_norm": 94.81727581873047,
+      "sha256": "cef6c0502ecab432962427aff22d1bd35076b37b89f84f200a8ea45734a7a2cc",
+      "used_in": [
+        "S6 dev aegyo.dir.L31"
+      ]
+    },
+    {
+      "file": "aegyo.dir.L31.raw.npy",
+      "source": "S6/vectors/aegyo.dir.L31.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 31,
+      "construction": "Equal-pair mean of final-reply-token aegyo-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 94.81727600097656,
+      "l2_norm": 3.143385648058882,
+      "sha256": "17132d56ee95f823babcccd74e6381dc713697e5f19863d9176888fc4c66b338",
+      "used_in": [
+        "Construction input for aegyo.dir.L31.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "aegyo.neuron.L34.N06825.npy",
+      "source": "S6/vectors/aegyo.neuron.L34.N06825.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 34,
+      "construction": "Admitted W_down neuron write column, unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 23.42238998413086,
+      "l2_norm": 23.42238993250235,
+      "sha256": "39a7b30464f0f0996c152b9a489db1dd8c61cb64d572365ed6f046af396c4ac2",
+      "used_in": [
+        "S6 dev aegyo.neuron.L34.N06825"
+      ]
+    },
+    {
+      "file": "aegyo.neuron.L34.N08835.npy",
+      "source": "S6/vectors/aegyo.neuron.L34.N08835.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 34,
+      "construction": "Admitted W_down neuron write column, unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 23.42238998413086,
+      "l2_norm": 23.422390038045314,
+      "sha256": "03209d3d9a27fd0bfaea90e9424fbb6f6b1c0ec03f9fe83e2141b535bb223414",
+      "used_in": [
+        "S6 dev aegyo.neuron.L34.N08835"
+      ]
+    },
+    {
+      "file": "eumseum.dir.L08.npy",
+      "source": "S6/vectors/eumseum.dir.L08.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 8,
+      "construction": "Equal-pair mean of final-reply-token eumseum-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 69.92144775390625,
+      "l2_norm": 69.92144796314383,
+      "sha256": "d6bbcd6165d5617b0a3c0781b08282e4bdb410a975b74048f8b71360e4891671",
+      "used_in": [
+        "S6 dev eumseum.dir.L08"
+      ]
+    },
+    {
+      "file": "eumseum.dir.L08.raw.npy",
+      "source": "S6/vectors/eumseum.dir.L08.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 8,
+      "construction": "Equal-pair mean of final-reply-token eumseum-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 69.92144775390625,
+      "l2_norm": 8.637422593398378,
+      "sha256": "227b04102931f269fa35b71d94d027478d53e01ff3e59ba2b230a891932dae4d",
+      "used_in": [
+        "Construction input for eumseum.dir.L08.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "eumseum.dir.L14.npy",
+      "source": "S6/vectors/eumseum.dir.L14.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 14,
+      "construction": "Equal-pair mean of final-reply-token eumseum-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 64.6662826538086,
+      "l2_norm": 64.666283207183,
+      "sha256": "72dab4bdc8d4765437a3f257d5eddf85eb32ec7f05c9bda7a7aef819ece6979f",
+      "used_in": [
+        "S6 dev eumseum.dir.L14"
+      ]
+    },
+    {
+      "file": "eumseum.dir.L14.raw.npy",
+      "source": "S6/vectors/eumseum.dir.L14.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 14,
+      "construction": "Equal-pair mean of final-reply-token eumseum-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 64.6662826538086,
+      "l2_norm": 3.170203002505672,
+      "sha256": "cfe5c2a07c6e6aa84c9fca6c84e057cf5871869a16b317ca87e905b9a8af2d71",
+      "used_in": [
+        "Construction input for eumseum.dir.L14.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "eumseum.dir.L20.npy",
+      "source": "S6/vectors/eumseum.dir.L20.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 20,
+      "construction": "Equal-pair mean of final-reply-token eumseum-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 67.02741241455078,
+      "l2_norm": 67.02741331870959,
+      "sha256": "f2add2fdac80332d717ab17679c2142e702513d725d93d8a8b4fd843ddc72798",
+      "used_in": [
+        "S6 dev eumseum.dir.L20"
+      ]
+    },
+    {
+      "file": "eumseum.dir.L20.raw.npy",
+      "source": "S6/vectors/eumseum.dir.L20.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 20,
+      "construction": "Equal-pair mean of final-reply-token eumseum-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 67.02741241455078,
+      "l2_norm": 3.3186715036341106,
+      "sha256": "f496025e95f00bdd184cfb20dd0e97c8050609987a35abeda61494a32a215ba7",
+      "used_in": [
+        "Construction input for eumseum.dir.L20.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "eumseum.dir.L27.npy",
+      "source": "S6/vectors/eumseum.dir.L27.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Equal-pair mean of final-reply-token eumseum-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860783799,
+      "sha256": "ac96c0894b0459ae934add7de2ea6f5fa7f3bbd731c18bce7b19e9ac2fa0c640",
+      "used_in": [
+        "S6 dev eumseum.dir.L27"
+      ]
+    },
+    {
+      "file": "eumseum.dir.L27.raw.npy",
+      "source": "S6/vectors/eumseum.dir.L27.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Equal-pair mean of final-reply-token eumseum-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 2.6291553455961196,
+      "sha256": "cf68b7a308e04aff26dcd90075d7c4268afad948c50e4819c1a4c6fdf8ad7b17",
+      "used_in": [
+        "Construction input for eumseum.dir.L27.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "eumseum.dir.L31.npy",
+      "source": "S6/vectors/eumseum.dir.L31.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 31,
+      "construction": "Equal-pair mean of final-reply-token eumseum-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 94.81727600097656,
+      "l2_norm": 94.81727514813021,
+      "sha256": "a23f6a551b6e1260e5e6fa4ecb64cabbc820948ce1c9f6aabfdbf61b1dfebcd9",
+      "used_in": [
+        "S6 dev eumseum.dir.L31"
+      ]
+    },
+    {
+      "file": "eumseum.dir.L31.raw.npy",
+      "source": "S6/vectors/eumseum.dir.L31.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 31,
+      "construction": "Equal-pair mean of final-reply-token eumseum-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 94.81727600097656,
+      "l2_norm": 1.9314250779720559,
+      "sha256": "00d74691608807aae98276e1317ce03fc60e0e56b00c8c216326b57cfd25c671",
+      "used_in": [
+        "Construction input for eumseum.dir.L31.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "eumseum.neuron.L34.N01232.npy",
+      "source": "S6/vectors/eumseum.neuron.L34.N01232.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 34,
+      "construction": "Admitted W_down neuron write column, unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 23.42238998413086,
+      "l2_norm": 23.42239097288118,
+      "sha256": "ec832ad2678af7fcb02db01b710a0e4125c4560e94d684cc0c22b7c03d449ea7",
+      "used_in": [
+        "S6 dev eumseum.neuron.L34.N01232"
+      ]
+    },
+    {
+      "file": "eumseum.neuron.L34.N09935.npy",
+      "source": "S6/vectors/eumseum.neuron.L34.N09935.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 34,
+      "construction": "Admitted W_down neuron write column, unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 23.42238998413086,
+      "l2_norm": 23.42239030182129,
+      "sha256": "1822c775da2cd9b0897b1945bd1600d7893f1db559fb07a3e0b4eb239da08f91",
+      "used_in": [
+        "S6 dev eumseum.neuron.L34.N09935"
+      ]
+    },
+    {
+      "file": "haera.dir.L08.npy",
+      "source": "S6/vectors/haera.dir.L08.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 8,
+      "construction": "Equal-pair mean of final-reply-token haera-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 69.92144775390625,
+      "l2_norm": 69.92144712995729,
+      "sha256": "54fe367ab3c5262ed973306dac104eb863b330f139cb40566040a33f0408d396",
+      "used_in": [
+        "S6 dev haera.dir.L08"
+      ]
+    },
+    {
+      "file": "haera.dir.L08.raw.npy",
+      "source": "S6/vectors/haera.dir.L08.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 8,
+      "construction": "Equal-pair mean of final-reply-token haera-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 69.92144775390625,
+      "l2_norm": 6.352206175284164,
+      "sha256": "1b3140e68ce0875442489c076a2225d89616a27e7b520aeebd5fed20748f0055",
+      "used_in": [
+        "Construction input for haera.dir.L08.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "haera.dir.L14.npy",
+      "source": "S6/vectors/haera.dir.L14.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 14,
+      "construction": "Equal-pair mean of final-reply-token haera-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 64.6662826538086,
+      "l2_norm": 64.66628210674051,
+      "sha256": "c3696f03b01012fb7808f1fa858952e7c90fa1413adb4b4b4558ae87bff20ecd",
+      "used_in": [
+        "S6 dev haera.dir.L14"
+      ]
+    },
+    {
+      "file": "haera.dir.L14.raw.npy",
+      "source": "S6/vectors/haera.dir.L14.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 14,
+      "construction": "Equal-pair mean of final-reply-token haera-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 64.6662826538086,
+      "l2_norm": 3.172823157350284,
+      "sha256": "1448fe80e4db4065cf6a2dfbe4a646aeecd8c77518c8b9d711b3f8f653848ed9",
+      "used_in": [
+        "Construction input for haera.dir.L14.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "haera.dir.L20.npy",
+      "source": "S6/vectors/haera.dir.L20.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 20,
+      "construction": "Equal-pair mean of final-reply-token haera-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 67.02741241455078,
+      "l2_norm": 67.02741195096674,
+      "sha256": "1a34e4e017502a0be32d1c411a445a464e6eb33cc94149ee3cec168b88e098f8",
+      "used_in": [
+        "S6 dev haera.dir.L20"
+      ]
+    },
+    {
+      "file": "haera.dir.L20.raw.npy",
+      "source": "S6/vectors/haera.dir.L20.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 20,
+      "construction": "Equal-pair mean of final-reply-token haera-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 67.02741241455078,
+      "l2_norm": 2.353508688933113,
+      "sha256": "cc4839f5922cd401f8bc578e255412374c834ce94acf4aafb4c4895d07ba3a21",
+      "used_in": [
+        "Construction input for haera.dir.L20.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "haera.dir.L27.npy",
+      "source": "S6/vectors/haera.dir.L27.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Equal-pair mean of final-reply-token haera-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860883193807,
+      "sha256": "5c912af0447793e152557d3a4b8c39f183b4238d40dd0baebce52ed4089eb0a0",
+      "used_in": [
+        "S6 dev haera.dir.L27"
+      ]
+    },
+    {
+      "file": "haera.dir.L27.raw.npy",
+      "source": "S6/vectors/haera.dir.L27.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Equal-pair mean of final-reply-token haera-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 2.407875285116827,
+      "sha256": "977915e8297ce243e660bba713a7f2d2d963d5208f9dc85b1df28c6056122747",
+      "used_in": [
+        "Construction input for haera.dir.L27.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "haera.dir.L31.npy",
+      "source": "S6/vectors/haera.dir.L31.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 31,
+      "construction": "Equal-pair mean of final-reply-token haera-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 94.81727600097656,
+      "l2_norm": 94.81727529611153,
+      "sha256": "6eeb7339dd1c807888ff58286d98506069a0c30980d659cce2ccbd60b632cf34",
+      "used_in": [
+        "S6 dev haera.dir.L31"
+      ]
+    },
+    {
+      "file": "haera.dir.L31.raw.npy",
+      "source": "S6/vectors/haera.dir.L31.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 31,
+      "construction": "Equal-pair mean of final-reply-token haera-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 94.81727600097656,
+      "l2_norm": 1.9461504107922711,
+      "sha256": "d345a471c51ff81489242d8b4d8cfc5787ff86ad35410eb3561cb1cd009ec60c",
+      "used_in": [
+        "Construction input for haera.dir.L31.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "haera.neuron.L34.N01667.npy",
+      "source": "S6/vectors/haera.neuron.L34.N01667.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 34,
+      "construction": "Admitted W_down neuron write column, unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 23.42238998413086,
+      "l2_norm": 23.422389469379244,
+      "sha256": "288d663455456304723d99345ad425a71e78c3e7e4329c24cbc53766d9c31180",
+      "used_in": [
+        "S6 dev haera.neuron.L34.N01667"
+      ]
+    },
+    {
+      "file": "haera.neuron.L34.N02183.npy",
+      "source": "S6/vectors/haera.neuron.L34.N02183.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 34,
+      "construction": "Admitted W_down neuron write column, unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 23.42238998413086,
+      "l2_norm": 23.422389542595315,
+      "sha256": "8c49bd0375071d70f4d4e01202fec690b0e17b53ad3d3eaf9f450c4906ef0f2e",
+      "used_in": [
+        "S6 dev haera.neuron.L34.N02183"
+      ]
+    },
+    {
+      "file": "hasipsio.dir.L08.npy",
+      "source": "S6/vectors/hasipsio.dir.L08.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 8,
+      "construction": "Equal-pair mean of final-reply-token hasipsio-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 69.92144775390625,
+      "l2_norm": 69.92144863282779,
+      "sha256": "ddc8ea7b0890e0ae3f0eeb3595d1a0d4a068052994292bd122098e89183e2f92",
+      "used_in": [
+        "S6 dev hasipsio.dir.L08"
+      ]
+    },
+    {
+      "file": "hasipsio.dir.L08.raw.npy",
+      "source": "S6/vectors/hasipsio.dir.L08.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 8,
+      "construction": "Equal-pair mean of final-reply-token hasipsio-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 69.92144775390625,
+      "l2_norm": 3.4485524196611825,
+      "sha256": "8d8e22d63775d130b8c89a198225b8fed00f4e842a24e49b89f0e5b4fcc64036",
+      "used_in": [
+        "Construction input for hasipsio.dir.L08.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "hasipsio.dir.L14.npy",
+      "source": "S6/vectors/hasipsio.dir.L14.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 14,
+      "construction": "Equal-pair mean of final-reply-token hasipsio-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 64.6662826538086,
+      "l2_norm": 64.6662811436302,
+      "sha256": "b3d6db11287e48d02236c183d6bd4e8a54ceaca303537f11d21a8b6ff7884b6b",
+      "used_in": [
+        "S6 dev hasipsio.dir.L14"
+      ]
+    },
+    {
+      "file": "hasipsio.dir.L14.raw.npy",
+      "source": "S6/vectors/hasipsio.dir.L14.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 14,
+      "construction": "Equal-pair mean of final-reply-token hasipsio-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 64.6662826538086,
+      "l2_norm": 1.8732709442423234,
+      "sha256": "418b8e08f2481ef7608e5ecf195768aa47f2612a92ef39cf7dc7381049a37131",
+      "used_in": [
+        "Construction input for hasipsio.dir.L14.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "hasipsio.dir.L20.npy",
+      "source": "S6/vectors/hasipsio.dir.L20.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 20,
+      "construction": "Equal-pair mean of final-reply-token hasipsio-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 67.02741241455078,
+      "l2_norm": 67.02741193393014,
+      "sha256": "32b16356ca7e6c0fd93fd94e958c875cfc15f4a5b400b7d0676d49d65250f95a",
+      "used_in": [
+        "S6 dev hasipsio.dir.L20"
+      ]
+    },
+    {
+      "file": "hasipsio.dir.L20.raw.npy",
+      "source": "S6/vectors/hasipsio.dir.L20.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 20,
+      "construction": "Equal-pair mean of final-reply-token hasipsio-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 67.02741241455078,
+      "l2_norm": 1.7532253184659505,
+      "sha256": "d87b7f7089301263e017594c22fbc75393cd3d4cb826cb35bc40552c8d39ea88",
+      "used_in": [
+        "Construction input for hasipsio.dir.L20.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "hasipsio.dir.L27.npy",
+      "source": "S6/vectors/hasipsio.dir.L27.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Equal-pair mean of final-reply-token hasipsio-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860855109934,
+      "sha256": "46d47ed31a83b18f2864ce23400b80bb521e9887edf051fba691c05ec16e6388",
+      "used_in": [
+        "S6 dev hasipsio.dir.L27",
+        "S6 held-out hasipsio.dir.L27.d0.65",
+        "S6 held-out prompt+hasipsio.dir.L27.d0.65"
+      ]
+    },
+    {
+      "file": "hasipsio.dir.L27.raw.npy",
+      "source": "S6/vectors/hasipsio.dir.L27.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Equal-pair mean of final-reply-token hasipsio-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 1.9589241545032139,
+      "sha256": "8a5c63a90af0c33877a4a6bf82f1e973ffd5048c96ff9584826e180450d486a9",
+      "used_in": [
+        "Construction input for hasipsio.dir.L27.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "hasipsio.dir.L31.npy",
+      "source": "S6/vectors/hasipsio.dir.L31.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 31,
+      "construction": "Equal-pair mean of final-reply-token hasipsio-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded. Unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 94.81727600097656,
+      "l2_norm": 94.81727674540632,
+      "sha256": "e56b96257ae4e85a15db33f9e4db31b7819f884a24020216dbb2cd2c96c6c08c",
+      "used_in": [
+        "S6 dev hasipsio.dir.L31"
+      ]
+    },
+    {
+      "file": "hasipsio.dir.L31.raw.npy",
+      "source": "S6/vectors/hasipsio.dir.L31.raw.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 31,
+      "construction": "Equal-pair mean of final-reply-token hasipsio-minus-partner residual differences from 32 build pairs at this layer; validation pairs excluded.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 94.81727600097656,
+      "l2_norm": 1.6449737687944146,
+      "sha256": "d08e28f0b13830c0fe2737e1b9a99744e1db285f99e02b38b3ae68c09f6a3de2",
+      "used_in": [
+        "Construction input for hasipsio.dir.L31.npy; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "hasipsio.neuron.L29.N01857.npy",
+      "source": "S6/vectors/hasipsio.neuron.L29.N01857.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 29,
+      "construction": "Admitted W_down neuron write column, unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 107.83164978027344,
+      "l2_norm": 107.83164707143052,
+      "sha256": "8850ad1a8c9565fe53c348f676b0c76e0719ac060b32feab1c649d1dae9884be",
+      "used_in": [
+        "S6 dev hasipsio.neuron.L29.N01857"
+      ]
+    },
+    {
+      "file": "hasipsio.neuron.L29.N05973.npy",
+      "source": "S6/vectors/hasipsio.neuron.L29.N05973.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 29,
+      "construction": "Admitted W_down neuron write column, unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 107.83164978027344,
+      "l2_norm": 107.83164915717492,
+      "sha256": "257117035e2edc04c8f66496ec8ecb1a08613e711ddcf8f1f7f2b56968b79738",
+      "used_in": [
+        "S6 dev hasipsio.neuron.L29.N05973"
+      ]
+    },
+    {
+      "file": "random.aegyo.dir.L08.npy",
+      "source": "S6/vectors/random.aegyo.dir.L08.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 8,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 69.92144775390625,
+      "l2_norm": 69.92144850965497,
+      "sha256": "0d1d4ef1e4a119c067e10a56dc60b7efe6a1517b1eaf91eee6512671ab99cad0",
+      "used_in": [
+        "S6 dev paired control for aegyo.dir.L08"
+      ]
+    },
+    {
+      "file": "random.aegyo.dir.L14.npy",
+      "source": "S6/vectors/random.aegyo.dir.L14.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 14,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 64.6662826538086,
+      "l2_norm": 64.66627785077101,
+      "sha256": "8b32d051e5c48fc401a486aa7a259f11855059dc764e0d0ebdba93ccd848c235",
+      "used_in": [
+        "S6 dev paired control for aegyo.dir.L14"
+      ]
+    },
+    {
+      "file": "random.aegyo.dir.L20.npy",
+      "source": "S6/vectors/random.aegyo.dir.L20.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 20,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 67.02741241455078,
+      "l2_norm": 67.02740647305289,
+      "sha256": "e6461b8d4d7362462736a78bb93b40d9cc369ab60ce547bd97e246bf0687c713",
+      "used_in": [
+        "S6 dev paired control for aegyo.dir.L20"
+      ]
+    },
+    {
+      "file": "random.aegyo.dir.L27.npy",
+      "source": "S6/vectors/random.aegyo.dir.L27.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860144708278,
+      "sha256": "ae0fc809f9471b8867122115eb98a19e2a546c9fd7ec51035ef664d4d087ffd5",
+      "used_in": [
+        "S6 dev paired control for aegyo.dir.L27"
+      ]
+    },
+    {
+      "file": "random.aegyo.dir.L31.npy",
+      "source": "S6/vectors/random.aegyo.dir.L31.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 31,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 94.81727600097656,
+      "l2_norm": 94.81727491978315,
+      "sha256": "bbe910f6940e1b35a04c3627fdcc43d33f42bff5e0d7d14f27ac596f2c2c626a",
+      "used_in": [
+        "S6 dev paired control for aegyo.dir.L31"
+      ]
+    },
+    {
+      "file": "random.aegyo.neuron.L34.N06825.npy",
+      "source": "S6/vectors/random.aegyo.neuron.L34.N06825.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 34,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 23.42238998413086,
+      "l2_norm": 23.42238798556727,
+      "sha256": "e9c3abf7d2fca3bb6fccb79b09c7707c0417b309dc9efbbc1311a3745f37c7ed",
+      "used_in": [
+        "S6 dev paired control for aegyo.neuron.L34.N06825"
+      ]
+    },
+    {
+      "file": "random.aegyo.neuron.L34.N08835.npy",
+      "source": "S6/vectors/random.aegyo.neuron.L34.N08835.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 34,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 23.42238998413086,
+      "l2_norm": 23.422389993639833,
+      "sha256": "899be403f90d9dbf025990423b31b9398c6906b9b9dc17d3de4497745e6a4336",
+      "used_in": [
+        "S6 dev paired control for aegyo.neuron.L34.N08835"
+      ]
+    },
+    {
+      "file": "random.eumseum.dir.L08.npy",
+      "source": "S6/vectors/random.eumseum.dir.L08.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 8,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 69.92144775390625,
+      "l2_norm": 69.92144850965497,
+      "sha256": "0d1d4ef1e4a119c067e10a56dc60b7efe6a1517b1eaf91eee6512671ab99cad0",
+      "used_in": [
+        "S6 dev paired control for eumseum.dir.L08"
+      ]
+    },
+    {
+      "file": "random.eumseum.dir.L14.npy",
+      "source": "S6/vectors/random.eumseum.dir.L14.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 14,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 64.6662826538086,
+      "l2_norm": 64.66628533734402,
+      "sha256": "d023526d67710c725f8360c0d9a9b7ace93c3dde7c66d0125dc3ad82b25f01c1",
+      "used_in": [
+        "S6 dev paired control for eumseum.dir.L14"
+      ]
+    },
+    {
+      "file": "random.eumseum.dir.L20.npy",
+      "source": "S6/vectors/random.eumseum.dir.L20.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 20,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 67.02741241455078,
+      "l2_norm": 67.02741401170798,
+      "sha256": "006213152cf48eb0adaa0510ce8399b4170b7d89b36417c5190d337af7de88ff",
+      "used_in": [
+        "S6 dev paired control for eumseum.dir.L20"
+      ]
+    },
+    {
+      "file": "random.eumseum.dir.L27.npy",
+      "source": "S6/vectors/random.eumseum.dir.L27.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860934928545,
+      "sha256": "a241f8cade1efa9fb7eb8b2545ece7fbcd9d82dae8d7866e7a6d7214a34520cd",
+      "used_in": [
+        "S6 dev paired control for eumseum.dir.L27"
+      ]
+    },
+    {
+      "file": "random.eumseum.dir.L31.npy",
+      "source": "S6/vectors/random.eumseum.dir.L31.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 31,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 94.81727600097656,
+      "l2_norm": 94.81727491978315,
+      "sha256": "bbe910f6940e1b35a04c3627fdcc43d33f42bff5e0d7d14f27ac596f2c2c626a",
+      "used_in": [
+        "S6 dev paired control for eumseum.dir.L31"
+      ]
+    },
+    {
+      "file": "random.eumseum.neuron.L34.N01232.npy",
+      "source": "S6/vectors/random.eumseum.neuron.L34.N01232.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 34,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 23.42238998413086,
+      "l2_norm": 23.422389993639833,
+      "sha256": "899be403f90d9dbf025990423b31b9398c6906b9b9dc17d3de4497745e6a4336",
+      "used_in": [
+        "S6 dev paired control for eumseum.neuron.L34.N01232"
+      ]
+    },
+    {
+      "file": "random.eumseum.neuron.L34.N09935.npy",
+      "source": "S6/vectors/random.eumseum.neuron.L34.N09935.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 34,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 23.42238998413086,
+      "l2_norm": 23.422389993639833,
+      "sha256": "899be403f90d9dbf025990423b31b9398c6906b9b9dc17d3de4497745e6a4336",
+      "used_in": [
+        "S6 dev paired control for eumseum.neuron.L34.N09935"
+      ]
+    },
+    {
+      "file": "random.haera.dir.L08.npy",
+      "source": "S6/vectors/random.haera.dir.L08.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 8,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 69.92144775390625,
+      "l2_norm": 69.92144850965497,
+      "sha256": "0d1d4ef1e4a119c067e10a56dc60b7efe6a1517b1eaf91eee6512671ab99cad0",
+      "used_in": [
+        "S6 dev paired control for haera.dir.L08"
+      ]
+    },
+    {
+      "file": "random.haera.dir.L14.npy",
+      "source": "S6/vectors/random.haera.dir.L14.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 14,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 64.6662826538086,
+      "l2_norm": 64.66628533734402,
+      "sha256": "d023526d67710c725f8360c0d9a9b7ace93c3dde7c66d0125dc3ad82b25f01c1",
+      "used_in": [
+        "S6 dev paired control for haera.dir.L14"
+      ]
+    },
+    {
+      "file": "random.haera.dir.L20.npy",
+      "source": "S6/vectors/random.haera.dir.L20.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 20,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 67.02741241455078,
+      "l2_norm": 67.02741401170798,
+      "sha256": "006213152cf48eb0adaa0510ce8399b4170b7d89b36417c5190d337af7de88ff",
+      "used_in": [
+        "S6 dev paired control for haera.dir.L20"
+      ]
+    },
+    {
+      "file": "random.haera.dir.L27.npy",
+      "source": "S6/vectors/random.haera.dir.L27.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860934928545,
+      "sha256": "a241f8cade1efa9fb7eb8b2545ece7fbcd9d82dae8d7866e7a6d7214a34520cd",
+      "used_in": [
+        "S6 dev paired control for haera.dir.L27"
+      ]
+    },
+    {
+      "file": "random.haera.dir.L31.npy",
+      "source": "S6/vectors/random.haera.dir.L31.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 31,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 94.81727600097656,
+      "l2_norm": 94.81727491978315,
+      "sha256": "bbe910f6940e1b35a04c3627fdcc43d33f42bff5e0d7d14f27ac596f2c2c626a",
+      "used_in": [
+        "S6 dev paired control for haera.dir.L31"
+      ]
+    },
+    {
+      "file": "random.haera.neuron.L34.N01667.npy",
+      "source": "S6/vectors/random.haera.neuron.L34.N01667.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 34,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 23.42238998413086,
+      "l2_norm": 23.42238798556727,
+      "sha256": "e9c3abf7d2fca3bb6fccb79b09c7707c0417b309dc9efbbc1311a3745f37c7ed",
+      "used_in": [
+        "S6 dev paired control for haera.neuron.L34.N01667"
+      ]
+    },
+    {
+      "file": "random.haera.neuron.L34.N02183.npy",
+      "source": "S6/vectors/random.haera.neuron.L34.N02183.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 34,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 23.42238998413086,
+      "l2_norm": 23.42238607083485,
+      "sha256": "07bd167884b1c41cc352034a0209faa2d709c96c3d785a4264d60c623a4a9969",
+      "used_in": [
+        "S6 dev paired control for haera.neuron.L34.N02183"
+      ]
+    },
+    {
+      "file": "random.hasipsio.dir.L08.npy",
+      "source": "S6/vectors/random.hasipsio.dir.L08.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 8,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 69.92144775390625,
+      "l2_norm": 69.92144850965497,
+      "sha256": "0d1d4ef1e4a119c067e10a56dc60b7efe6a1517b1eaf91eee6512671ab99cad0",
+      "used_in": [
+        "S6 dev paired control for hasipsio.dir.L08"
+      ]
+    },
+    {
+      "file": "random.hasipsio.dir.L14.npy",
+      "source": "S6/vectors/random.hasipsio.dir.L14.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 14,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 64.6662826538086,
+      "l2_norm": 64.66628533734402,
+      "sha256": "d023526d67710c725f8360c0d9a9b7ace93c3dde7c66d0125dc3ad82b25f01c1",
+      "used_in": [
+        "S6 dev paired control for hasipsio.dir.L14"
+      ]
+    },
+    {
+      "file": "random.hasipsio.dir.L20.npy",
+      "source": "S6/vectors/random.hasipsio.dir.L20.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 20,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 67.02741241455078,
+      "l2_norm": 67.02741401170798,
+      "sha256": "006213152cf48eb0adaa0510ce8399b4170b7d89b36417c5190d337af7de88ff",
+      "used_in": [
+        "S6 dev paired control for hasipsio.dir.L20"
+      ]
+    },
+    {
+      "file": "random.hasipsio.dir.L27.npy",
+      "source": "S6/vectors/random.hasipsio.dir.L27.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860934928545,
+      "sha256": "a241f8cade1efa9fb7eb8b2545ece7fbcd9d82dae8d7866e7a6d7214a34520cd",
+      "used_in": [
+        "S6 dev paired control for hasipsio.dir.L27",
+        "S6 held-out random.hasipsio.dir.L27.d0.65"
+      ]
+    },
+    {
+      "file": "random.hasipsio.dir.L31.npy",
+      "source": "S6/vectors/random.hasipsio.dir.L31.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 31,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 94.81727600097656,
+      "l2_norm": 94.81727491978315,
+      "sha256": "bbe910f6940e1b35a04c3627fdcc43d33f42bff5e0d7d14f27ac596f2c2c626a",
+      "used_in": [
+        "S6 dev paired control for hasipsio.dir.L31"
+      ]
+    },
+    {
+      "file": "random.hasipsio.neuron.L29.N01857.npy",
+      "source": "S6/vectors/random.hasipsio.neuron.L29.N01857.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 29,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 107.83164978027344,
+      "l2_norm": 107.83164749631263,
+      "sha256": "79e623ada14e78797b42f78ad394288f37180ea9577d8ba66a397734832ab665",
+      "used_in": [
+        "S6 dev paired control for hasipsio.neuron.L29.N01857"
+      ]
+    },
+    {
+      "file": "random.hasipsio.neuron.L29.N05973.npy",
+      "source": "S6/vectors/random.hasipsio.neuron.L29.N05973.npy",
+      "stage": "S6",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 29,
+      "construction": "S1 same-layer random index 317, unit-normalized and scaled to the paired vector norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S6/RULE.md",
+      "construction_code": "../code/s6/b_compute.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 107.83164978027344,
+      "l2_norm": 107.83164749631263,
+      "sha256": "79e623ada14e78797b42f78ad394288f37180ea9577d8ba66a397734832ab665",
+      "used_in": [
+        "S6 dev paired control for hasipsio.neuron.L29.N05973"
+      ]
+    },
+    {
+      "file": "N1939_L27.npy",
+      "source": "S3b/vectors/N1939_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "W_down column N1939 at L27, unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860901001758,
+      "sha256": "81328c6b1daeaaff141927bead0ab13c664315cefb058edf23738368f8637319",
+      "used_in": [
+        "S3b dev arm N1939"
+      ]
+    },
+    {
+      "file": "N6893_L26.npy",
+      "source": "S3b/vectors/N6893_L26.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 26,
+      "construction": "W_down column N6893 at L26, unit-normalized and multiplied by the layer median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 80.9868392944336,
+      "l2_norm": 80.98683912364217,
+      "sha256": "4c964dbcd8d5ca742209d3a614450e03f83abcbb00b38b592c67eaf3156e8af7",
+      "used_in": [
+        "S3b dev arm N6893"
+      ]
+    },
+    {
+      "file": "friend_last_L27.npy",
+      "source": "S3b/vectors/friend_last_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Unit of the equal-pair mean friend-minus-polite final-reply-token L27 residual difference over 40 pairs; multiplied by the L27 median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860857102083,
+      "sha256": "042e002f89b90a406f11c0c3f70fa622b0418c66ae87377c1c5ee380b92b2209",
+      "used_in": [
+        "S3b dev arm friend_last"
+      ]
+    },
+    {
+      "file": "friend_mean_L27.npy",
+      "source": "S3b/vectors/friend_mean_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Unit of the equal-pair mean friend-minus-polite difference over 40 pairs, using an equal per-reply mean of L27 reply-token residuals; multiplied by the L27 median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16861504627572,
+      "sha256": "51f262c7d49133a30a580f6563e39d773c55764742c6b5c07aa905c61d7aeaa8",
+      "used_in": [
+        "S3b dev arm friend_mean"
+      ]
+    },
+    {
+      "file": "minus_you_L27.npy",
+      "source": "S3b/vectors/minus_you_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "unit(n - dot(n,u)*u), where n=unit N1939 and u=second_person_unit; multiplied by the L27 median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16861123018504,
+      "sha256": "19c5cf078ae73f97c41a5b5eb65d3973104bf115966c577e9280d40d606b2172",
+      "used_in": [
+        "S3b dev arm minus_you"
+      ]
+    },
+    {
+      "file": "mix_friend_L27.npy",
+      "source": "S3b/vectors/mix_friend_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "unit(0.4*n + 0.6*unit(friend_mean)), n=unit N1939; multiplied by the L27 median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860936964798,
+      "sha256": "b4c139b55895f0a07760db0f307a627446fbc3889e14bc1bf43a3615b8c98ea6",
+      "used_in": [
+        "S3b dev arm mix_friend"
+      ]
+    },
+    {
+      "file": "mix_minus_you_L27.npy",
+      "source": "S3b/vectors/mix_minus_you_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "unit(0.4*n + 0.6*unit(minus_you)), n=unit N1939; multiplied by the L27 median residual norm.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860464738707,
+      "sha256": "51665f2e95bd5fde4cf4f08f0cefc4c2d598dde862f23dca77333783fdd66a90",
+      "used_in": [
+        "S3b dev arm mix_minus_you"
+      ]
+    },
+    {
+      "file": "random_N1939_L27.npy",
+      "source": "S3b/vectors/random_N1939_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "S1 same-layer random index 317, unit-normalized and norm-matched to N1939; negative sign for reverse_friend controls.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860934928545,
+      "sha256": "a241f8cade1efa9fb7eb8b2545ece7fbcd9d82dae8d7866e7a6d7214a34520cd",
+      "used_in": [
+        "S3b dev arm random_N1939"
+      ]
+    },
+    {
+      "file": "random_N6893_L26.npy",
+      "source": "S3b/vectors/random_N6893_L26.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 26,
+      "construction": "S1 same-layer random index 318, unit-normalized and norm-matched to N6893; negative sign for reverse_friend controls.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 80.9868392944336,
+      "l2_norm": 80.98683827719567,
+      "sha256": "14767b5bed432a5b0a078720e7d3bdc3dd8aba97399bbecbf9bba4b6f4042efd",
+      "used_in": [
+        "S3b dev arm random_N6893"
+      ]
+    },
+    {
+      "file": "random_friend_last_L27.npy",
+      "source": "S3b/vectors/random_friend_last_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "S1 same-layer random index 317, unit-normalized and norm-matched to friend_last; negative sign for reverse_friend controls.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860934928545,
+      "sha256": "a241f8cade1efa9fb7eb8b2545ece7fbcd9d82dae8d7866e7a6d7214a34520cd",
+      "used_in": [
+        "S3b dev arm random_friend_last"
+      ]
+    },
+    {
+      "file": "random_friend_mean_L27.npy",
+      "source": "S3b/vectors/random_friend_mean_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "S1 same-layer random index 317, unit-normalized and norm-matched to friend_mean; negative sign for reverse_friend controls.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16861722090415,
+      "sha256": "fe25c049e299e9436e71d747be0ae2e82e2baaabc588d37ca4e805e0e7dcd891",
+      "used_in": [
+        "S3b dev arm random_friend_mean"
+      ]
+    },
+    {
+      "file": "random_minus_you_L27.npy",
+      "source": "S3b/vectors/random_minus_you_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "S1 same-layer random index 317, unit-normalized and norm-matched to minus_you; negative sign for reverse_friend controls.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860934928545,
+      "sha256": "a241f8cade1efa9fb7eb8b2545ece7fbcd9d82dae8d7866e7a6d7214a34520cd",
+      "used_in": [
+        "S3b dev arm random_minus_you"
+      ]
+    },
+    {
+      "file": "random_mix_friend_L27.npy",
+      "source": "S3b/vectors/random_mix_friend_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "S1 same-layer random index 317, unit-normalized and norm-matched to mix_friend; negative sign for reverse_friend controls.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860934928545,
+      "sha256": "a241f8cade1efa9fb7eb8b2545ece7fbcd9d82dae8d7866e7a6d7214a34520cd",
+      "used_in": [
+        "S3b dev arm random_mix_friend"
+      ]
+    },
+    {
+      "file": "random_mix_minus_you_L27.npy",
+      "source": "S3b/vectors/random_mix_minus_you_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "S1 same-layer random index 317, unit-normalized and norm-matched to mix_minus_you; negative sign for reverse_friend controls.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860144708278,
+      "sha256": "ae0fc809f9471b8867122115eb98a19e2a546c9fd7ec51035ef664d4d087ffd5",
+      "used_in": [
+        "S3b dev arm random_mix_minus_you"
+      ]
+    },
+    {
+      "file": "random_reverse_friend_last_L27.npy",
+      "source": "S3b/vectors/random_reverse_friend_last_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "S1 same-layer random index 317, unit-normalized and norm-matched to reverse_friend_last; negative sign for reverse_friend controls.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860934928545,
+      "sha256": "7e333e53bd51dfada72ad2d88b64e8d02d18ea93506f85ef4f4d7ab05a615c93",
+      "used_in": [
+        "S3b dev arm random_reverse_friend_last"
+      ]
+    },
+    {
+      "file": "random_reverse_friend_mean_L27.npy",
+      "source": "S3b/vectors/random_reverse_friend_mean_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "S1 same-layer random index 317, unit-normalized and norm-matched to reverse_friend_mean; negative sign for reverse_friend controls.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16861722090415,
+      "sha256": "bb17457530185d9c8d6020a1f7b206ace68d3036c978db65743bf47f79517128",
+      "used_in": [
+        "S3b dev arm random_reverse_friend_mean"
+      ]
+    },
+    {
+      "file": "reverse_friend_last_L27.npy",
+      "source": "S3b/vectors/reverse_friend_last_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Exact negative of friend_last_L27.npy.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16860857102083,
+      "sha256": "275cd2984e4b116645b0b3b584e7635ad39594549b428783dc6497fcf4004e22",
+      "used_in": [
+        "S3b dev arm reverse_friend_last"
+      ]
+    },
+    {
+      "file": "reverse_friend_mean_L27.npy",
+      "source": "S3b/vectors/reverse_friend_mean_L27.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Exact negative of friend_mean_L27.npy.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "pre-scaled; inject dose * stored_vector without further normalization",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 92.16861504627572,
+      "sha256": "812cd0a30a4ec44f8426c5722872df783ebd31459dbdeb0ee642ba03f7aed8d2",
+      "used_in": [
+        "S3b dev arm reverse_friend_mean"
+      ]
+    },
+    {
+      "file": "second_person_raw.npy",
+      "source": "S3b/vectors/second_person_raw.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Equal-pair mean informal-second-person-minus-subject-omitted L27 residual difference over 24 pairs, using an equal per-reply mean of reply-token positions; unscaled.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 9.427596430427183,
+      "sha256": "d08af629f07441df8b045f396c2b2322b9eefc1f760c3be34bff5c79ea46cc05",
+      "used_in": [
+        "S3b minus_you projection removal and auxiliary construction; not directly injected in the reported grid"
+      ]
+    },
+    {
+      "file": "second_person_unit.npy",
+      "source": "S3b/vectors/second_person_unit.npy",
+      "stage": "S3b",
+      "dtype": "<f4",
+      "shape": [
+        1536
+      ],
+      "layer_zero_based": 27,
+      "construction": "Unit-normalized second_person_raw.npy; not multiplied by a residual median.",
+      "methods": "../METHODS.md#push-engine-and-numerical-validation",
+      "rule": "../preregistration/S3b/RULE.md",
+      "construction_code": "../code/push/build_directions.py",
+      "scaling": "auxiliary; see construction before applying",
+      "layer_median_residual_norm": 92.16860961914062,
+      "l2_norm": 1.0000000404104183,
+      "sha256": "55fccf93e7f67eaae7aa83392d5c7e14d20a3b4e9a62daa52cee43d2213fd489",
+      "used_in": [
+        "S3b minus_you projection removal and auxiliary construction; not directly injected in the reported grid"
+      ]
+    }
+  ]
+}

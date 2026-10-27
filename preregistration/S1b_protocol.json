@@ -1,0 +1,18 @@
+{
+  "schema": "S1b-precommitted-v1",
+  "frozen_utc": "2026-10-25T18:40:11.963445+00:00",
+  "primary_score": "mean within-direction pre-softcap token z-score",
+  "formula": "mu=sum(x_t)/V; sigma=sqrt(sum((x_t-mu)^2)/V); score_g=(mean(x_t for t in g)-mu)/sigma",
+  "vocabulary_population": "all 262144 IDs, including special and unused IDs, as in S1; no filtering of normalization population",
+  "why": "Removes positive multiplicative scale and common additive offset, keeps unsaturated relative logit magnitudes. Simpler linear group contrast than rank scoring. It does not guarantee semantic specificity.",
+  "ranking": "Face validity: descending primary score, then ascending layer and neuron index; include layer0. No percentile-first ranking for this check.",
+  "face_bar": "For each group: at least 10 of the top20 neurons have at least 3 group member token IDs among their pre-softcap top20. Space-marker variants are separate vocabulary IDs. No tuning after results.",
+  "sanity_selection": "Retain S1 rule: 6 highest banmal then 6 highest polite excluding selected, order by (layer-control percentile, primary score, lower layer, lower index); same 12 random neurons and seed. Compare the 24 neuron identities with archived S1; rerun only if identities change. Match controls to new layers, keep dose/prompts/API scope unchanged.",
+  "controls": "Reuse exact S1 control_directions.f32, 512 per layer; no new random control distribution.",
+  "post_softcap": "reference field only; cannot affect primary score or ranking",
+  "estimated_full_lens_seconds": 3600,
+  "estimated_sanity_seconds_if_needed": 300,
+  "estimated_validation_seconds": 240,
+  "total_compute_budget_seconds": 7200,
+  "token_groups_sha256": "fe4f0f03a09d5dd696f38bd46b6462fdd16686b343316c539a8d2edbff9e93b7"
+}

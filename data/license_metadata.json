@@ -1,0 +1,10 @@
+{
+  "gguf_version": 3,
+  "model_sha256": "740185b21d22ceb83a11c3aa62ad5842ef32c70f6096d756bbee85a1e4ec34b8",
+  "metadata": {
+    "general.license": "apache-2.0",
+    "general.license.link": "https://ai.google.dev/gemma/docs/gemma_4_license"
+  },
+  "read_from_local_gguf": true,
+  "terms_fetched": false
+}
