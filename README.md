@@ -22,7 +22,7 @@ Measured findings:
 
 Browse the map: [docs/index.html](docs/index.html) — Korean first, with an English toggle.
 
-GitHub Pages: link to be added after publication.
+Online map (GitHub Pages): https://salixkoreensis94-spec.github.io/gemma4-e2b-neuron-map/
 
 The map can be opened locally. It is self contained and makes no runtime network requests. `RESULTS.md` gives tables and selected original replies; `METHODS.md` distinguishes measurements, proxies, selection and reading. `data/` contains compact JSON with all condition summaries and fixed illustrative reply samples, without vocabulary token IDs or checkpoints. S5a appears only as aggregate counts; no reviewer words or individual marks are included.
 
