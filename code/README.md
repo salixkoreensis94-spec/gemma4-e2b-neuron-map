@@ -55,3 +55,8 @@ Reconstruct and validate in dependency order:
 7. S6 uses the authored build/validation split, fixed prompt lines and held-out scenarios. Regenerate `tokenized_inputs.json`, token groups, `freeze.json`, engine validation and rule hashes for a **new** run using the included redacted rule. The public rule hash differs from the original by disclosed redaction. Update `RULE_HASH` in the new work copy to the new rule hash and freeze all input hashes before computation. Do not bypass freeze checks or label a redacted hash as the original. Then run the copied `S6/tools/b_compute.py` with its original S2 cached-screen path. The full grid precedes selection; no held-out reselection.
 
 The frozen RULE copies and original/adapted hashes explain exact historical decisions. The prose above identifies reconstruction work that requires the supplied model and numerical dependencies; it is not a claim of tested one-command reproduction. The release decisions are recorded in `DECISIONS.md`. Model-dependent portability remains untested.
+
+
+## Round-2 aggregate addition
+
+`build_page.py` also reads `data/round2_sensors.json` for a short Korean/English sensor panel. Its build archive stays outside the staged public tree. The existing inference tools and `check_offline.py` cover round 1; no round-2 inference, probe training, private adapters, packages or app source are added. The new JSON files contain aggregates with source fingerprints; they do not enable end-to-end round-2 reconstruction. See `data/ROUND2.md` and `METHODS.md` for units, missing-threshold semantics and the frozen protocol copies.

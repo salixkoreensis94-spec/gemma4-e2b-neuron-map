@@ -1,0 +1,183 @@
+{
+  "main_scenarios": 46,
+  "side_scenarios": 4,
+  "judged_replies": 300,
+  "unique_units": 297,
+  "bars": {
+    "sign_test": {
+      "better": 10,
+      "worse": 12,
+      "tie": 24,
+      "net_better": -2,
+      "p_one_sided": 0.7382664680480957,
+      "passes": false
+    },
+    "total_slips": {
+      "before": {
+        "agreed_yes": 27,
+        "agreed_no": 99,
+        "disagreement": 12,
+        "total": 138
+      },
+      "after": {
+        "agreed_yes": 26,
+        "agreed_no": 101,
+        "disagreement": 11,
+        "total": 138
+      },
+      "ratio": 0.9629629629629629,
+      "passes": false
+    },
+    "note_echo": {
+      "agreed_yes": 6,
+      "agreed_no": 128,
+      "disagreement": 4,
+      "total": 138,
+      "rate": 0.043478260869565216,
+      "passes": false
+    }
+  },
+  "all_bars_pass": false,
+  "by_kind": {
+    "collision": {
+      "scenarios": 46,
+      "before": {
+        "agreed_yes": 27,
+        "agreed_no": 99,
+        "disagreement": 12,
+        "total": 138
+      },
+      "after": {
+        "agreed_yes": 26,
+        "agreed_no": 101,
+        "disagreement": 11,
+        "total": 138
+      },
+      "note_echo": {
+        "agreed_yes": 6,
+        "agreed_no": 128,
+        "disagreement": 4,
+        "total": 138
+      },
+      "better": 10,
+      "worse": 12
+    }
+  },
+  "sensitivity": {
+    "before_slip_range": [
+      27,
+      39
+    ],
+    "after_slip_range": [
+      26,
+      37
+    ],
+    "after_echo_range": [
+      6,
+      10
+    ],
+    "note": "Unknown ranges, not semantic labels; preregistered bars use agreed yes only."
+  },
+  "by_character": {
+    "D": {
+      "scenarios": 16,
+      "before": {
+        "agreed_yes": 6,
+        "agreed_no": 38,
+        "disagreement": 4,
+        "total": 48
+      },
+      "after": {
+        "agreed_yes": 10,
+        "agreed_no": 36,
+        "disagreement": 2,
+        "total": 48
+      },
+      "note_echo": {
+        "agreed_yes": 3,
+        "agreed_no": 43,
+        "disagreement": 2,
+        "total": 48
+      },
+      "better": 2,
+      "worse": 6
+    },
+    "B": {
+      "scenarios": 9,
+      "before": {
+        "agreed_yes": 6,
+        "agreed_no": 18,
+        "disagreement": 3,
+        "total": 27
+      },
+      "after": {
+        "agreed_yes": 6,
+        "agreed_no": 19,
+        "disagreement": 2,
+        "total": 27
+      },
+      "note_echo": {
+        "agreed_yes": 2,
+        "agreed_no": 23,
+        "disagreement": 2,
+        "total": 27
+      },
+      "better": 2,
+      "worse": 2
+    },
+    "C": {
+      "scenarios": 12,
+      "before": {
+        "agreed_yes": 10,
+        "agreed_no": 24,
+        "disagreement": 2,
+        "total": 36
+      },
+      "after": {
+        "agreed_yes": 7,
+        "agreed_no": 25,
+        "disagreement": 4,
+        "total": 36
+      },
+      "note_echo": {
+        "agreed_yes": 1,
+        "agreed_no": 35,
+        "disagreement": 0,
+        "total": 36
+      },
+      "better": 4,
+      "worse": 2
+    },
+    "A": {
+      "scenarios": 9,
+      "before": {
+        "agreed_yes": 5,
+        "agreed_no": 19,
+        "disagreement": 3,
+        "total": 27
+      },
+      "after": {
+        "agreed_yes": 3,
+        "agreed_no": 21,
+        "disagreement": 3,
+        "total": 27
+      },
+      "note_echo": {
+        "agreed_yes": 0,
+        "agreed_no": 27,
+        "disagreement": 0,
+        "total": 27
+      },
+      "better": 2,
+      "worse": 2
+    }
+  },
+  "bar_thresholds": {
+    "sign_test_p_max": 0.1,
+    "net_better_min": 5,
+    "slip_ratio_max": 0.7,
+    "echo_rate_max": 0.03
+  },
+  "scope": "46 matched-note scenarios; 138 recorded a and 138 new a-prime replies rejudged together; 4 side scenarios excluded from bars",
+  "label_source": "two independent AI judges; disagreement remains unknown"
+}

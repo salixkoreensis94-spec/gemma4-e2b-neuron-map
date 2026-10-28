@@ -1,18 +1,20 @@
 # Privacy scrub report
 
-Date: 2026-10-27
+Date: 2026-10-28
 
-Scope: every file under this release folder (including hidden/ignored files, binary arrays treated as text, this report and `docs/index.html`), plus the separate content-only artifact. All 26 S4 patterns are retained; an exact full-author-credit pattern is added. Scanning uses case-insensitive ripgrep PCRE2. Counts are match occurrences, not lines. Historical files in S4/_superseded, tools and local check workspaces are outside the release scope.
+Scope: every file in the staged public tree, including hidden/ignored files, binary arrays scanned as text, this report and `docs/index.html`. The page builder's `artifact_body.html` (the same page body) was scanned too, then kept out of the published tree. All 27 round-1 patterns (the 26 S4 patterns plus exact author credit) are retained. Case-insensitive ripgrep PCRE2 counts match occurrences, not lines. Work-folder check logs, decision drafts and `_superseded/` archives are outside the staged tree.
 
-Only README author headers and copyright lines, NOTICE copyright, CITATION author fields and map footer credits may match the Latin author patterns. Source footer strings in `code/page.js` are the same permitted credit. Every hit is listed below by file, line and one-based byte column, without repeating the name outside its permitted locations. Required upstream idea credit remains; no upstream code was used. Individual human review marks, notes and reviewer quotations are excluded. Original scientific measurements and classifier behavior are preserved.
+Author and footer credits retain the round-1 exact-location allowance. The two inherited README Pages URL lines have one narrow public-link allowance: the round-1 report predates those link additions. All occurrences are listed below, including overlapping author patterns. No other occurrence is permitted. No identifier is reproduced here outside an encoded pattern or a file/line location.
 
-| Pattern category | Checked PCRE2 pattern | Final count |
+Round-2 source extraction uses a field allowlist: aggregate metrics/counts only; no cases, replies, annotation text, raw context, token IDs, activations, adapter/package files, checkpoints or app source. Character labels are A–D. RULE copies neutralize creator/character identities, package/environment references and follow-up private scenario IDs/model manifest; source and distributed hashes are separate. No round-2 individual human review marks or words are included. Inherited authorized round-1 illustrative replies, aggregate review counts and steering vectors retain their existing scope. Only synthetic round-2 fixtures were used; no own-chat contents were encountered in the reviewed inputs.
+
+| Pattern category | Checked PCRE2 pattern | Count |
 |---|---|---:|
 | user-home-path | `[/]Users[/]` | 0 |
 | unix-home-path | `[/]home[/]` | 0 |
 | volume-path | `[/]Volumes[/]` | 0 |
 | personal-machine-name | `[j]ihosmacbookpro` | 0 |
-| alternate-handle | `sa[l]ix` | 0 |
+| alternate-handle | `sa[l]ix` | 2 |
 | volume-label | `J[I]HO[_]SSD` | 0 |
 | compute-host | `\bo[m]en\b` | 0 |
 | private-ip-prefix | `192[.]168[.]` | 0 |
@@ -38,32 +40,28 @@ Only README author headers and copyright lines, NOTICE copyright, CITATION autho
 
 ## Every hit
 
-The token and full-credit patterns overlap; both match lists are shown. The citation given-name field matches only the token pattern.
-
-| Category | File | Line | Byte column | Allowed credit |
+| Category | File | Line | Byte column | Allowed credit / public link |
 |---|---|---:|---:|---|
+| alternate-handle | `README.md` | 28 | 36 | yes |
+| alternate-handle | `README_ko.md` | 24 | 41 | yes |
 | author-latin-name | `CITATION.cff` | 6 | 19 | yes |
 | author-latin-name | `NOTICE` | 1 | 21 | yes |
 | author-latin-name | `README.md` | 3 | 16 | yes |
 | author-latin-name | `README.md` | 5 | 21 | yes |
 | author-latin-name | `README_ko.md` | 3 | 19 | yes |
 | author-latin-name | `README_ko.md` | 5 | 21 | yes |
-| author-latin-name | `code/page.js` | 32 | 478 | yes |
-| author-latin-name | `code/page.js` | 45 | 2241 | yes |
-| author-latin-name | `docs/index.html` | 47 | 478 | yes |
-| author-latin-name | `docs/index.html` | 60 | 2241 | yes |
-| author-latin-name | `map/artifact_body.html` | 45 | 478 | yes |
-| author-latin-name | `map/artifact_body.html` | 58 | 2241 | yes |
+| author-latin-name | `code/page.js` | 40 | 478 | yes |
+| author-latin-name | `code/page.js` | 61 | 2260 | yes |
+| author-latin-name | `docs/index.html` | 55 | 478 | yes |
+| author-latin-name | `docs/index.html` | 76 | 2260 | yes |
 | author-full-credit | `NOTICE` | 1 | 16 | yes |
 | author-full-credit | `README.md` | 3 | 11 | yes |
 | author-full-credit | `README.md` | 5 | 16 | yes |
 | author-full-credit | `README_ko.md` | 3 | 14 | yes |
 | author-full-credit | `README_ko.md` | 5 | 16 | yes |
-| author-full-credit | `code/page.js` | 32 | 473 | yes |
-| author-full-credit | `code/page.js` | 45 | 2236 | yes |
-| author-full-credit | `docs/index.html` | 47 | 473 | yes |
-| author-full-credit | `docs/index.html` | 60 | 2236 | yes |
-| author-full-credit | `map/artifact_body.html` | 45 | 473 | yes |
-| author-full-credit | `map/artifact_body.html` | 58 | 2236 | yes |
+| author-full-credit | `code/page.js` | 40 | 473 | yes |
+| author-full-credit | `code/page.js` | 61 | 2255 | yes |
+| author-full-credit | `docs/index.html` | 55 | 473 | yes |
+| author-full-credit | `docs/index.html` | 76 | 2255 | yes |
 
-Every other pattern must be zero. These regexes test specified identifiers and conventional formats, not every conceivable personal fact. Stage/model names and original scientific hashes are intentional. Synthetic scenarios are authored research fixtures.
+All occurrences outside these exact credit/public-link allowances must be zero. The scan was rerun after this report and the complete checksum manifest were written. Regex checks cover the specified identifiers and formats, not every conceivable personal fact. No inference or new semantic annotation was performed while staging.

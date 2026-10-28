@@ -160,3 +160,64 @@ One reviewer, 30 cells; blind and post-reveal marks were identical. Category ord
 | L27 N1939 +0.25 | 6 / 1 / 3 | 9 / 0 / 1 | 0 / 5 / 5 |
 | L27 N1939 +0.5 | 8 / 2 / 0 | 9 / 0 / 1 | 1 / 3 / 6 |
 | reference register vector ×0.5 (L4–14) | 9 / 1 / 0 | 9 / 1 / 0 | reference |
+
+## Round 2: residual sensors
+
+**Negative result: no residual sensor passed the frozen bars.** The question was whether residual readouts can detect character failures better than text or token surprise, without changing the reply. R1 tests ownership confusion (whose person, event or fact); R2 assistant/AI identity drift; R3 formulaic AI tone; R4 unsupported memory, prior-conversation or date/time claims. The primary model was Gemma 4 E2B Q4_K_M with four per-character LoRA adapters (A–D); adapters are not distributed.
+
+Frozen reply bars required AUROC ≥0.85, ≥0.05 above the best word/character/token-surprise AUROC, held-out precision ≥0.75 at a dev precision ≥0.80 threshold, and recall ≥0.10 above the dev-selected text/rule comparator while both retained precision ≥0.75. Pre-generation bars required AUROC ≥0.80, ≥0.05 above pre-generation word/character baselines, and held-out precision ≥0.50 plus recall ≥0.30 at a dev precision ≥0.60 threshold. Every sensor also needed ≥40 agreed positive held-out sensor units. Thresholds required at least five predicted positives on dev; no qualifying threshold meant +∞ and failure, with no held-out retuning.
+
+| Reply sensor | Residual AUROC [95% family CI] | Best text AUROC (character) | Token-surprise AUROC | Residual − best baseline | Held-out precision / recall | Verdict |
+|---|---|---:|---:|---:|---|---|
+| R1 ownership | 0.744 [0.648, 0.823] | 0.762 | 0.566 | −0.018 | 0.355 / 0.193 | FAIL |
+| R3 AI tone | 0.906 [0.851, 0.947] | 0.913 | 0.719 | −0.007 | 0.000 / 0.000 | FAIL |
+| R4 memory | 0.802 [0.658, 0.902] | 0.778 | 0.577 | +0.024 | 0.000 / 0.000 | FAIL |
+
+Token surprise selected mean NLL on dev from mean, maximum and highest-NLL 10% tail; it was computed from untempered logits using the same model/adapter as the residual. These AUROCs measure ranking against agreed AI labels, not calibrated awareness of an error. R3's high reply AUROC did not improve on the character baseline or yield a qualifying dev operating threshold. R4 missed both the absolute AUROC and added-value bars. R2 was descriptive only: its frozen held-out raw counts were 11 positive / 842 negative / 11 disagreements, with 10 positives in the base arm and a label-definition problem around ordinary professional disclaimers. No R2 sensor was trained or passed.
+
+| Pre-generation sensor | Residual AUROC [95% family CI] | Best pre-text AUROC | Held-out positive / negative units (positive families) | Dev operating threshold | Verdict |
+|---|---|---:|---|---|---|
+| R1 | 0.645 [0.422, 0.865] | 0.612 (word) | 16 / 295 (7) | none qualifying | UNDERPOWERED |
+| R3 | 0.854 [0.737, 0.928] | 0.653 (word) | 34 / 209 (17) | none qualifying | UNDERPOWERED |
+| R4 | 0.766 [0.613, 0.908] | 0.806 (word) | 14 / 262 (6) | none qualifying | UNDERPOWERED |
+
+All three pre-generation sensors also had zero detections at their frozen thresholds. R3 is a descriptive signal, not a usable sensor: it missed the power and operating bars. The same prompt readout cannot distinguish LoRA arm a from base-generated arm c when their prompts are identical under the primary LoRA capture model.
+
+| Selection diagnostic (dev OOF only) | Actual AUROC | Maximum of 20 row shuffles | Maximum of 20 family-block shuffles |
+|---|---:|---:|---:|
+| R1 reply | 0.918 | 0.637 | 0.741 |
+| R1 pre | 0.928 | 0.710 | 0.841 |
+| R3 reply | 0.871 | 0.599 | 0.788 |
+| R3 pre | 0.729 | 0.632 | 0.713 |
+| R4 reply | 0.809 | 0.603 | 0.779 |
+| R4 pre | 0.829 | 0.703 | 0.773 |
+
+Each shuffle repeated the full layer/feature/C selection with fixed grouped folds. Family-block shuffles moved label blocks only among equal-sized families; limited movable groups constrain that control. Their higher maxima than row shuffles are consistent with selection exploiting family structure. The R1 dev-to-held-out drop also includes the N0b→N0c distribution change; these diagnostics do not isolate its causes or establish a significance test. In particular R3 pre dev OOF 0.729 is close to the family-block maximum 0.713.
+
+The separate owner probe was reporting only, trained on correct dev spans rather than bad-reply labels. On 44 correct held-out spans its LoRA span-last true-owner accuracy was 0.977. At 19 natural slip spans it read the asserted wrong surface owner much more often than the context's true owner:
+
+| Reporting-only owner readout | Correct held-out true-owner accuracy | Slip true-owner / surface-owner accuracy |
+|---|---:|---|
+| Majority owner | 0.795 | 0.947 / 0.053 |
+| Span-character baseline | 0.977 | 0.053 / 0.947 |
+| LoRA span-last (L2) | 0.977 | 0.105 / 0.895 |
+| LoRA immediately before span (L30) | 0.886 | 0.105 / 0.895 |
+
+| Separate minimal owner flips | Pairs | Flipped − original span NLL, nats [95% family CI] | Span-last Δp(true owner) [95% family CI] |
+|---|---:|---|---|
+| N0b dev analysis | 28 | +2.633 [2.156, 3.041] | −0.087 [−0.109, −0.074] |
+| N0c held-out analysis | 23 | +4.471 [3.624, 5.754] | −0.424 [−0.461, −0.390] |
+
+Before the edited span, the counterfactual readout difference was zero because the prefix was identical. Constructed flips were more surprising, but they were not natural errors and never entered sensor training or slip totals. The natural-slip readout offers no evidence here of a correct hidden owner representation that a steering intervention could recover. This is a limited probe reading, not proof about all internal knowledge, causal mechanisms or fixability. No steering/N2 was run. **No sensor passed.**
+
+<!-- BEGIN OPTIONAL INPUT FOLLOW-UP -->
+### Input-side follow-up
+
+At ownership slips the owner probe usually read the wrong owner, so an input-side alternative was tried: add a note entry for a user-side person or pet whose name collides with the character or its own relations. An a versus a′ check used 46 scenarios with byte-identical app-off and recorded N0c-a notes, reusing 138 baseline replies and generating 138 a′ replies; both were judged again together by two independent AI judges. All three bars missed: better 10 / worse 12 / tied 24 (one-sided sign-test p=0.738; required p≤0.10 and net improvement≥5), agreed ownership slips 27→26 (required ≤18), and note echo 6/138=4.35% (required ≤3%). Disagreements remained unknown. Nonblind reading suggested that a contrast inside parentheses primed the character's own ownership claim; that explanation was not causally isolated. Four separately reported scenarios did not enter the bars. This is a controlled prompt replay, not a live-app effectiveness measurement. N0c-a used a hand-authored ledger with the app's collision exclusion, rather than the app's full reader; the matched-note restriction matters. No app source, prompt text or generated reply is included here.
+<!-- END OPTIONAL INPUT FOLLOW-UP -->
+
+Round-2 aggregate data: `data/round2_sensors.json`, `round2_counts.json`, `round2_owner.json` and `round2_namesakes.json`. Frozen rule copies and original/copy hashes are under `preregistration/`; their publication redactions do not create a new historical preregistration.
+
+<!-- OPTIONAL BENCH KEY: insert approved A–D names/descriptions here, or leave empty. -->
+<!-- OPTIONAL ROUND2 SAMPLES: insert only approved fixed illustrations here, or leave empty. -->
+<!-- OPTIONAL NOTE PATTERN: insert an approved generic line here, or leave empty. -->

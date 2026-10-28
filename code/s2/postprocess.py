@@ -211,7 +211,7 @@ def report():
           '[읽기] 설치는 별도 [configured environment]에만 했다. [unrelated directory]는 바꾸지 않았다. 모델 원본과 앱도 수정하지 않았다.',
           '[읽기] S1 엔진의 헤더와 수치 연산 소스만 읽어 이 폴더에 복사했다. 경로와 해시를 logs/에 남겼다.',
           '[읽기] 파일을 지우지 않았다. 이전 구현과 실패 결과는 _superseded/에 보존했다. git은 쓰지 않았다.',
-          '[읽기] 네트워크는 omen의 ssh/scp와 그 실행 환경의 PyPI 설치에만 썼다.','',
+          '[읽기] 네트워크는 노트북의 ssh/scp와 그 실행 환경의 PyPI 설치에만 썼다.','',
           '재실행: tools/prepare.py → tools/build_reference.py → tools/reference → 입력 복사 → tools/validate_engine.py → tools/run_screen.py benchmark → tools/run_screen.py screen → tools/postprocess.py analyze → tools/validate_allpos.py → tools/postprocess.py report → tools/provenance.py.',
           '기존 파일은 먼저 _superseded/로 옮겨야 한다. venv와 GGUF는 S2 밖에 둔다.']
     errors={k:max(x['max_abs_errors'][k] for x in a['independent_float64_metric_checks']) for k in ('shift','kl','entropy_change')}

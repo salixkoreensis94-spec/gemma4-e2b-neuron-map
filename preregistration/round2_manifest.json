@@ -1,0 +1,37 @@
+[
+  {
+    "source": "N1/RULE.md",
+    "original_sha256": "7a6cc82db2967408257f8d0be1753d0ad304117a1ea97692cd6f1a254cebc482",
+    "included": "preregistration/N1/RULE.md",
+    "included_sha256": "a485cb718fa522930b56c1ef9bbf556146151f4cbac45f2cc4e8c764463db515",
+    "redactions": "creator/character identity, private package and environment references; follow-up scenario IDs and private model manifest withheld"
+  },
+  {
+    "source": "N0b/RULE.md",
+    "original_sha256": "701845d073e06f9ee09855a8f083ac5613202d9aed7ab692d38e4f929b606521",
+    "included": "preregistration/N0b/RULE.md",
+    "included_sha256": "4d3f07052590e01db2bd902fd71b74c880ff67acd89b35ed3f6c0106e7f57ed3",
+    "redactions": "creator/character identity, private package and environment references; follow-up scenario IDs and private model manifest withheld"
+  },
+  {
+    "source": "N0c/RULE.md",
+    "original_sha256": "47ef699e53ea497db605f1df67d090106ed5d6d51c1987dc0bcbf652f533d9db",
+    "included": "preregistration/N0c/RULE.md",
+    "included_sha256": "3a3b22f22be719db4d60028b5480e928fc4eea54980db993dee00515d7a89106",
+    "redactions": "creator/character identity, private package and environment references; follow-up scenario IDs and private model manifest withheld"
+  },
+  {
+    "source": "N1b/RULE.md",
+    "original_sha256": "93eb5c14679a5023d4d78a65e2f262d8a0ab3e3415edd01fc1d35d269486c888",
+    "included": "preregistration/N1b/RULE.md",
+    "included_sha256": "4e16b80b7ea0d7d2b24e8ccb1425a15653aed2597962ffe5e535719c9a11129c",
+    "redactions": "creator/character identity, private package and environment references; follow-up scenario IDs and private model manifest withheld"
+  },
+  {
+    "source": "namesake_followup/RULE.md",
+    "original_sha256": "d013ea0182c81e80201682b4b96ecfef104c7ec4025f9f5d09dbb8b0ab11f250",
+    "included": "preregistration/namesake_followup/RULE.md",
+    "included_sha256": "2d5b6a236e0d8951e20a5dc2a82034b458311590fb4277a233e66ab3268a72ed",
+    "redactions": "creator/character identity, private package and environment references; follow-up scenario IDs and private model manifest withheld"
+  }
+]

@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "label_source": "two independent AI judges; exact primary agreement only",
+  "N0b_raw": {
+    "R1": {
+      "reply_kappa": {
+        "n": 2160,
+        "agreement": 0.9814814814814815,
+        "expected_agreement": 0.9337941529492455,
+        "kappa": 0.7202887759396555,
+        "confusion": [
+          {
+            "A": false,
+            "B": false,
+            "n": 2066
+          },
+          {
+            "A": false,
+            "B": true,
+            "n": 11
+          },
+          {
+            "A": true,
+            "B": false,
+            "n": 29
+          },
+          {
+            "A": true,
+            "B": true,
+            "n": 54
+          }
+        ]
+      },
+      "unique_context_reply_kappa": {
+        "n": 2053,
+        "agreement": 0.9805163175840234,
+        "expected_agreement": 0.9340938106566632,
+        "kappa": 0.7043724935380979,
+        "confusion": [
+          {
+            "A": false,
+            "B": false,
+            "n": 1963
+          },
+          {
+            "A": false,
+            "B": true,
+            "n": 11
+          },
+          {
+            "A": true,
+            "B": false,
+            "n": 29
+          },
+          {
+            "A": true,
+            "B": true,
+            "n": 50
+          }
+        ]
+      },
+      "counts": {
+        "dev": {
+          "positive": 28,
+          "negative": 1248,
+          "disagreement": 20
+        },
+        "heldout": {
+          "positive": 26,
+          "negative": 818,
+          "disagreement": 20
+        }
+      },
+      "heldout_positive_family_count": 4
+    },
+    "R2": {
+      "reply_kappa": {
+        "n": 2160,
+        "agreement": 0.9833333333333333,
+        "expected_agreement": 0.9364094650205761,
+        "kappa": 0.7379064876233613,
+        "confusion": [
+          {
+            "A": false,
+            "B": false,
+            "n": 2071
+          },
+          {
+            "A": false,
+            "B": true,
+            "n": 13
+          },
+          {
+            "A": true,
+            "B": false,
+            "n": 23
+          },
+          {
+            "A": true,
+            "B": true,
+            "n": 53
+          }
+        ]
+      },
+      "unique_context_reply_kappa": {
+        "n": 2053,
+        "agreement": 0.9824646858256211,
+        "expected_agreement": 0.935937785081127,
+        "kappa": 0.7262768045627946,
+        "confusion": [
+          {
+            "A": false,
+            "B": false,
+            "n": 1967
+          },
+          {
+            "A": false,
+            "B": true,
+            "n": 13
+          },
+          {
+            "A": true,
+            "B": false,
+            "n": 23
+          },
+          {
+            "A": true,
+            "B": true,
+            "n": 50
+          }
+        ]
+      },
+      "counts": {
+        "dev": {
+          "positive": 42,
+          "negative": 1229,
+          "disagreement": 25
+        },
+        "heldout": {
+          "positive": 11,
+          "negative": 842,
+          "disagreement": 11
+        }
+      },
+      "heldout_positive_family_count": 2
+    },
+    "R3": {
+      "reply_kappa": {
+        "n": 2160,
+        "agreement": 0.8296296296296296,
+        "expected_agreement": 0.6479783950617284,
+        "kappa": 0.5160229713734601,
+        "confusion": [
+          {
+            "A": "mild",
+            "B": "mild",
+            "n": 37
+          },
+          {
+            "A": "mild",
+            "B": "none",
+            "n": 109
+          },
+          {
+            "A": "mild",
+            "B": "strong",
+            "n": 21
+          },
+          {
+            "A": "none",
+            "B": "mild",
+            "n": 12
+          },
+          {
+            "A": "none",
+            "B": "none",
+            "n": 1544
+          },
+          {
+            "A": "none",
+            "B": "strong",
+            "n": 30
+          },
+          {
+            "A": "strong",
+            "B": "mild",
+            "n": 17
+          },
+          {
+            "A": "strong",
+            "B": "none",
+            "n": 179
+          },
+          {
+            "A": "strong",
+            "B": "strong",
+            "n": 211
+          }
+        ]
+      },
+      "unique_context_reply_kappa": {
+        "n": 2053,
+        "agreement": 0.8231855820750121,
+        "expected_agreement": 0.6428981716609222,
+        "kappa": 0.5048627481204105,
+        "confusion": [
+          {
+            "A": "mild",
+            "B": "mild",
+            "n": 37
+          },
+          {
+            "A": "mild",
+            "B": "none",
+            "n": 108
+          },
+          {
+            "A": "mild",
+            "B": "strong",
+            "n": 21
+          },
+          {
+            "A": "none",
+            "B": "mild",
+            "n": 11
+          },
+          {
+            "A": "none",
+            "B": "none",
+            "n": 1455
+          },
+          {
+            "A": "none",
+            "B": "strong",
+            "n": 30
+          },
+          {
+            "A": "strong",
+            "B": "mild",
+            "n": 17
+          },
+          {
+            "A": "strong",
+            "B": "none",
+            "n": 176
+          },
+          {
+            "A": "strong",
+            "B": "strong",
+            "n": 198
+          }
+        ]
+      },
+      "counts": {
+        "dev": {
+          "positive": 132,
+          "negative": 951,
+          "disagreement": 213
+        },
+        "heldout": {
+          "positive": 116,
+          "negative": 593,
+          "disagreement": 155
+        }
+      },
+      "heldout_positive_family_count": 22,
+      "binary_reply_kappa": {
+        "n": 2160,
+        "agreement": 0.8472222222222222,
+        "expected_agreement": 0.6631138545953361,
+        "kappa": 0.5465002646687568,
+        "confusion": [
+          {
+            "A": false,
+            "B": false,
+            "n": 1544
+          },
+          {
+            "A": false,
+            "B": true,
+            "n": 42
+          },
+          {
+            "A": true,
+            "B": false,
+            "n": 288
+          },
+          {
+            "A": true,
+            "B": true,
+            "n": 286
+          }
+        ]
+      }
+    },
+    "R4": {
+      "reply_kappa": {
+        "n": 2160,
+        "agreement": 0.9578703703703704,
+        "expected_agreement": 0.8121227709190673,
+        "kappa": 0.7757597882632107,
+        "confusion": [
+          {
+            "A": false,
+            "B": false,
+            "n": 1888
+          },
+          {
+            "A": false,
+            "B": true,
+            "n": 64
+          },
+          {
+            "A": true,
+            "B": false,
+            "n": 27
+          },
+          {
+            "A": true,
+            "B": true,
+            "n": 181
+          }
+        ]
+      },
+      "unique_context_reply_kappa": {
+        "n": 2053,
+        "agreement": 0.9561617145640526,
+        "expected_agreement": 0.8092582605759834,
+        "kappa": 0.7701694156280321,
+        "confusion": [
+          {
+            "A": false,
+            "B": false,
+            "n": 1789
+          },
+          {
+            "A": false,
+            "B": true,
+            "n": 63
+          },
+          {
+            "A": true,
+            "B": false,
+            "n": 27
+          },
+          {
+            "A": true,
+            "B": true,
+            "n": 174
+          }
+        ]
+      },
+      "counts": {
+        "dev": {
+          "positive": 125,
+          "negative": 1112,
+          "disagreement": 59
+        },
+        "heldout": {
+          "positive": 56,
+          "negative": 776,
+          "disagreement": 32
+        }
+      },
+      "heldout_positive_family_count": 9
+    }
+  },
+  "N0c_raw": {
+    "reply_kappa": {
+      "n": 960,
+      "agreement": 0.9697916666666667,
+      "expected": 0.8620138888888889,
+      "kappa": 0.7810770005032717,
+      "confusion": {
+        "(False, False)": 874,
+        "(False, True)": 7,
+        "(True, False)": 22,
+        "(True, True)": 57
+      }
+    },
+    "unique_kappa": {
+      "n": 937,
+      "agreement": 0.9690501600853789,
+      "expected": 0.8589027630816122,
+      "kappa": 0.7806488589672185,
+      "confusion": {
+        "(False, False)": 851,
+        "(False, True)": 7,
+        "(True, False)": 22,
+        "(True, True)": 57
+      }
+    },
+    "unique_units": 937,
+    "counts": {
+      "all": {
+        "positive": 57,
+        "negative": 874,
+        "disagreement": 29
+      },
+      "arm=a": {
+        "positive": 33,
+        "negative": 429,
+        "disagreement": 18
+      },
+      "arm=b": {
+        "positive": 24,
+        "negative": 445,
+        "disagreement": 11
+      },
+      "character=D": {
+        "positive": 14,
+        "negative": 218,
+        "disagreement": 8
+      },
+      "character=B": {
+        "positive": 9,
+        "negative": 220,
+        "disagreement": 11
+      },
+      "character=C": {
+        "positive": 16,
+        "negative": 217,
+        "disagreement": 7
+      },
+      "character=A": {
+        "positive": 18,
+        "negative": 219,
+        "disagreement": 3
+      },
+      "distance=1": {
+        "positive": 17,
+        "negative": 143,
+        "disagreement": 8
+      },
+      "distance=2": {
+        "positive": 17,
+        "negative": 147,
+        "disagreement": 4
+      },
+      "distance=3": {
+        "positive": 9,
+        "negative": 134,
+        "disagreement": 1
+      },
+      "distance=4": {
+        "positive": 2,
+        "negative": 140,
+        "disagreement": 2
+      },
+      "distance=5": {
+        "positive": 5,
+        "negative": 154,
+        "disagreement": 9
+      },
+      "distance=6": {
+        "positive": 7,
+        "negative": 156,
+        "disagreement": 5
+      },
+      "kind=character_only": {
+        "positive": 1,
+        "negative": 95,
+        "disagreement": 0
+      },
+      "kind=collision": {
+        "positive": 47,
+        "negative": 457,
+        "disagreement": 24
+      },
+      "kind=parallel_relation": {
+        "positive": 3,
+        "negative": 93,
+        "disagreement": 0
+      },
+      "kind=same_name_other_relation": {
+        "positive": 0,
+        "negative": 22,
+        "disagreement": 2
+      },
+      "kind=similar": {
+        "positive": 5,
+        "negative": 114,
+        "disagreement": 1
+      },
+      "kind=user_only": {
+        "positive": 1,
+        "negative": 93,
+        "disagreement": 2
+      },
+      "question_mode=natural": {
+        "positive": 19,
+        "negative": 438,
+        "disagreement": 23
+      },
+      "question_mode=quiz": {
+        "positive": 38,
+        "negative": 436,
+        "disagreement": 6
+      }
+    },
+    "positive_family_count": 22,
+    "kind_by_arm": [
+      {
+        "kind": "character_only",
+        "arm": "a",
+        "positive": 0,
+        "negative": 48,
+        "disagreement": 0
+      },
+      {
+        "kind": "character_only",
+        "arm": "b",
+        "positive": 1,
+        "negative": 47,
+        "disagreement": 0
+      },
+      {
+        "kind": "collision",
+        "arm": "a",
+        "positive": 27,
+        "negative": 222,
+        "disagreement": 15
+      },
+      {
+        "kind": "collision",
+        "arm": "b",
+        "positive": 20,
+        "negative": 235,
+        "disagreement": 9
+      },
+      {
+        "kind": "parallel_relation",
+        "arm": "a",
+        "positive": 3,
+        "negative": 45,
+        "disagreement": 0
+      },
+      {
+        "kind": "parallel_relation",
+        "arm": "b",
+        "positive": 0,
+        "negative": 48,
+        "disagreement": 0
+      },
+      {
+        "kind": "same_name_other_relation",
+        "arm": "a",
+        "positive": 0,
+        "negative": 10,
+        "disagreement": 2
+      },
+      {
+        "kind": "same_name_other_relation",
+        "arm": "b",
+        "positive": 0,
+        "negative": 12,
+        "disagreement": 0
+      },
+      {
+        "kind": "similar",
+        "arm": "a",
+        "positive": 3,
+        "negative": 57,
+        "disagreement": 0
+      },
+      {
+        "kind": "similar",
+        "arm": "b",
+        "positive": 2,
+        "negative": 57,
+        "disagreement": 1
+      },
+      {
+        "kind": "user_only",
+        "arm": "a",
+        "positive": 0,
+        "negative": 47,
+        "disagreement": 1
+      },
+      {
+        "kind": "user_only",
+        "arm": "b",
+        "positive": 1,
+        "negative": 46,
+        "disagreement": 1
+      }
+    ]
+  },
+  "sensor_units": [
+    {
+      "category": "R1",
+      "sensor": "reply",
+      "dev_counts": {
+        "n": 2013,
+        "positive": 50,
+        "negative": 1963
+      },
+      "heldout_positive_families": 22,
+      "heldout_counts": {
+        "n": 908,
+        "positive": 57,
+        "negative": 851
+      }
+    },
+    {
+      "category": "R1",
+      "sensor": "pre",
+      "dev_counts": {
+        "n": 705,
+        "positive": 22,
+        "negative": 683
+      },
+      "heldout_positive_families": 7,
+      "heldout_counts": {
+        "n": 311,
+        "positive": 16,
+        "negative": 295
+      }
+    },
+    {
+      "category": "R3",
+      "sensor": "reply",
+      "dev_counts": {
+        "n": 1025,
+        "positive": 120,
+        "negative": 905
+      },
+      "heldout_positive_families": 22,
+      "heldout_counts": {
+        "n": 665,
+        "positive": 115,
+        "negative": 550
+      }
+    },
+    {
+      "category": "R3",
+      "sensor": "pre",
+      "dev_counts": {
+        "n": 373,
+        "positive": 50,
+        "negative": 323
+      },
+      "heldout_positive_families": 17,
+      "heldout_counts": {
+        "n": 243,
+        "positive": 34,
+        "negative": 209
+      }
+    },
+    {
+      "category": "R4",
+      "sensor": "reply",
+      "dev_counts": {
+        "n": 1175,
+        "positive": 120,
+        "negative": 1055
+      },
+      "heldout_positive_families": 9,
+      "heldout_counts": {
+        "n": 788,
+        "positive": 54,
+        "negative": 734
+      }
+    },
+    {
+      "category": "R4",
+      "sensor": "pre",
+      "dev_counts": {
+        "n": 416,
+        "positive": 31,
+        "negative": 385
+      },
+      "heldout_positive_families": 6,
+      "heldout_counts": {
+        "n": 276,
+        "positive": 14,
+        "negative": 262
+      }
+    }
+  ]
+}
