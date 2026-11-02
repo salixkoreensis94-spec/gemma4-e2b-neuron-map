@@ -38,8 +38,10 @@
     "source": "S2/tools/postprocess.py",
     "original_sha256": "24f5c7ca5ec6a151dcca5f19ce744ef1c4627bd176474935551de28154a892b4",
     "path": "code/s2/postprocess.py",
-    "release_sha256": "a3fba95fc86e9542cb1f19e23367b85087c97077a28f77ba68170d199a93b4a7",
-    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved."
+    "release_sha256": "9f75470ab007d42f4d89c3e38c11d08ea4e82d3add0a64b63c3851fa7ad31c68",
+    "changes": "Path/environment configuration and anonymized illustrative docstrings only; numerical/statistical functions preserved.",
+    "inherited_release_sha256": "a3fba95fc86e9542cb1f19e23367b85087c97077a28f77ba68170d199a93b4a7",
+    "round3_provenance_note": "Corrected an inherited manifest mismatch against the unchanged read-only repository snapshot. Code bytes are unchanged; the previous release digest is preserved separately. No new inference validation is claimed."
   },
   {
     "source": "S2/tools/validate_allpos.py",

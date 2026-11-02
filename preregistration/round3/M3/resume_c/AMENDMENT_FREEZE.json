@@ -1,0 +1,10 @@
+{
+  "amendment_sha256": "e4f9e18510080028fdbe954a6fb6345b70a1ede2e609e6cefbb8ffdd0062db60",
+  "freeze_utc": "2026-10-31T07:57:59.566018+00:00",
+  "freeze_KST": "2026-10-31T16:57:59.566018+09:00",
+  "heldout_KL_computed": false,
+  "post_hoc": true,
+  "original_RULE_sha256": "8cbfd05ee919708193c0cb1cab24200c0055b553503edbdc8c1d574ad73e74af",
+  "RUN_sha256": "c48d6c6b029a2649163d3db6dd3c68b11df8d215332c1d1932a1f44682c8a0cd",
+  "evaluate_sha256": "9e492f973b8dc6efd63e0801cd3f072f794b602397b54d0445f48d45d4648cf4"
+}

@@ -1,67 +1,86 @@
 # Privacy scrub report
 
-Date: 2026-10-28
+Date: 2026-11-03
 
-Scope: every file in the staged public tree, including hidden/ignored files, binary arrays scanned as text, this report and `docs/index.html`. The page builder's `artifact_body.html` (the same page body) was scanned too, then kept out of the published tree. All 27 round-1 patterns (the 26 S4 patterns plus exact author credit) are retained. Case-insensitive ripgrep PCRE2 counts match occurrences, not lines. Work-folder check logs, decision drafts and `_superseded/` archives are outside the staged tree.
+All 27 round-1 identifier patterns were run over the whole staged tree, including compressed bytes. Every JSON gzip shard in the single Pages data copy was also decoded and scanned. Numeric fixed-width card/catalog files contain only schema-validated numbers and IDs. No matched text is printed or logged. The final read-only seal check includes this report and both checksum manifests.
 
-Author and footer credits retain the round-1 exact-location allowance. The two inherited README Pages URL lines have one narrow public-link allowance: the round-1 report predates those link additions. All occurrences are listed below, including overlapping author patterns. No other occurrence is permitted. No identifier is reproduced here outside an encoded pattern or a file/line location.
+Allowed scopes: inherited author credits, exact public repository/Issues links, exact open-dataset attribution links, and public UUID-shaped row IDs within pointer records only. Corpus snippets have no identifier exception. Inherited published examples retain their prior scope; no new private chat, judge context/rationale, app, adapter or character materials were extracted.
 
-Round-2 source extraction uses a field allowlist: aggregate metrics/counts only; no cases, replies, annotation text, raw context, token IDs, activations, adapter/package files, checkpoints or app source. Character labels are A–D. RULE copies neutralize creator/character identities, package/environment references and follow-up private scenario IDs/model manifest; source and distributed hashes are separate. No round-2 individual human review marks or words are included. Inherited authorized round-1 illustrative replies, aggregate review counts and steering vectors retain their existing scope. Only synthetic round-2 fixtures were used; no own-chat contents were encountered in the reviewed inputs.
+| Identifier category | Raw count | Decoded JSON count |
+|---|---:|---:|
+| user-home-path | 0 | 0 |
+| unix-home-path | 0 | 0 |
+| volume-path | 0 | 0 |
+| personal-machine-name | 0 | 0 |
+| alternate-handle | 4 | 0 |
+| volume-label | 0 | 0 |
+| Host-name pattern | 0 | 0 |
+| private-ip-prefix | 0 | 0 |
+| email | 0 | 0 |
+| hub-bucket-or-repository | 3 | 0 |
+| uuid-device-identifier | 0 | 0 |
+| hardware-address | 0 | 0 |
+| local-hostname | 0 | 0 |
+| application-switch | 0 | 0 |
+| application-agent-identifier | 0 | 0 |
+| application-internal-class | 0 | 0 |
+| Project-private name list | 0 | 0 |
+| author-latin-name | 10 | 0 |
+| author-full-credit | 9 | 0 |
 
-| Pattern category | Checked PCRE2 pattern | Count |
-|---|---|---:|
-| user-home-path | `[/]Users[/]` | 0 |
-| unix-home-path | `[/]home[/]` | 0 |
-| volume-path | `[/]Volumes[/]` | 0 |
-| personal-machine-name | `[j]ihosmacbookpro` | 0 |
-| alternate-handle | `sa[l]ix` | 2 |
-| volume-label | `J[I]HO[_]SSD` | 0 |
-| compute-host | `\bo[m]en\b` | 0 |
-| private-ip-prefix | `192[.]168[.]` | 0 |
-| email | `[A-Z0-9._%+\-]+@[A-Z0-9.\-]+[.][A-Z]{2,}` | 0 |
-| hub-bucket-or-repository | `(?:h[f]://|https?://(?:www[.])?(?:huggingface[.]co|hf[.]co)/|H[F][_]BUCKET|H[F][_]REPO|hf[_\-](?:bucket|repo))` | 0 |
-| uuid-device-identifier | `\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b` | 0 |
-| hardware-address | `\b(?:[0-9a-f]{2}:){5}[0-9a-f]{2}\b` | 0 |
-| local-hostname | `\b[a-z0-9-]+[.]local\b` | 0 |
-| application-switch | `p[v]a[.]` | 0 |
-| application-agent-identifier | `\bbot[_\-]?(?:id|[0-9a-z]{12,})\b` | 0 |
-| application-internal-class | `Visible[R]eplyCheck|Visible[W]hoIsWho` | 0 |
-| character-01 | `\x{c11c}\x{d558}` | 0 |
-| character-02 | `\x{c608}\x{c9c4}` | 0 |
-| character-03 | `\x{b9ac}\x{c5d4}` | 0 |
-| character-04 | `\x{c11c}\x{b9b0}` | 0 |
-| character-05 | `\x{d558}\x{b9b0}` | 0 |
-| character-06 | `\x{c740}\x{d638}` | 0 |
-| character-07 | `\x{bbf8}\x{b098}` | 0 |
-| character-08 | `\x{b3c4}\x{c724}` | 0 |
-| author-korean-name | `\x{c9c0}\x{d638}` | 0 |
-| author-latin-name | `\bji[h]o\b` | 12 |
-| author-full-credit | `\bRyou Ji[h]o\b` | 11 |
+## Open-source snippets
 
-## Every hit
+All 20 top-context ranks are eligible; N=20, with no budget cap. Snippets use 15 tokens before + firing token + 16 after, clipped to at most 32 content tokens. Each clipped window is stored once. No web context text is distributed.
 
-| Category | File | Line | Byte column | Allowed credit / public link |
-|---|---|---:|---:|---|
-| alternate-handle | `README.md` | 28 | 36 | yes |
-| alternate-handle | `README_ko.md` | 24 | 41 | yes |
-| author-latin-name | `CITATION.cff` | 6 | 19 | yes |
-| author-latin-name | `NOTICE` | 1 | 21 | yes |
-| author-latin-name | `README.md` | 3 | 16 | yes |
-| author-latin-name | `README.md` | 5 | 21 | yes |
-| author-latin-name | `README_ko.md` | 3 | 19 | yes |
-| author-latin-name | `README_ko.md` | 5 | 21 | yes |
-| author-latin-name | `code/page.js` | 40 | 478 | yes |
-| author-latin-name | `code/page.js` | 61 | 2260 | yes |
-| author-latin-name | `docs/index.html` | 55 | 478 | yes |
-| author-latin-name | `docs/index.html` | 76 | 2260 | yes |
-| author-full-credit | `NOTICE` | 1 | 16 | yes |
-| author-full-credit | `README.md` | 3 | 11 | yes |
-| author-full-credit | `README.md` | 5 | 16 | yes |
-| author-full-credit | `README_ko.md` | 3 | 14 | yes |
-| author-full-credit | `README_ko.md` | 5 | 16 | yes |
-| author-full-credit | `code/page.js` | 40 | 473 | yes |
-| author-full-credit | `code/page.js` | 61 | 2255 | yes |
-| author-full-credit | `docs/index.html` | 55 | 473 | yes |
-| author-full-credit | `docs/index.html` | 76 | 2255 | yes |
+The exact 200,000,000-byte token stream passed its frozen SHA256 check; 91,836 candidate/boundary chunks passed their individual token hashes. Whole-chunk M0 patterns, M3 boundary joins/first 32-character digit fragments, and snippet-level patterns run before publication. Boundary checks use adjacent chunks within the same source document; an unavailable previous chunk would be excluded. A fixed Korean/English lexical list conceals matching snippets until a click. Pattern filtering does not guarantee de-identification.
 
-All occurrences outside these exact credit/public-link allowances must be zero. The scan was rerun after this report and the complete checksum manifest were written. Regex checks cover the specified identifiers and formats, not every conceivable personal fact. No inference or new semantic annotation was performed while staging.
+| Open source | Candidate chunks | Unique snippets | Neuron-context references | Hidden references | Covered tokens | Dev coverage | Full fixed-slice coverage |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| songys/Chatbot_data | 6,957 | 8,996 | 12,680 | 8 | 129,093 | 60.546% | 59.900% |
+| mkd-chanwoo/keural-conversation-ko | 48,873 | 250,602 | 285,496 | 365 | 3,607,514 | 72.896% | 72.150% |
+| allenai/soda | 29,755 | 486,209 | 594,320 | 516 | 4,506,324 | 91.073% | 90.126% |
+| deepmind/pg19 | 5,871 | 150,756 | 199,336 | 2 | 1,380,098 | 92.007% | 92.007% |
+
+References count neuron/context slots; identical clipped windows are stored once. Coverage is the union of token intervals per corpus chunk. Dev and full fixed-source-slice denominators are distinct; no heldout text is published.
+
+| Drop category | Chunks | Context references |
+|---|---:|---:|
+| Host-name pattern | 4 | 124 |
+| Project-private name list | 67 | 527 |
+| account | 0 | 0 |
+| address | 97 | 1,743 |
+| boundary_address | 79 | 1,025 |
+| boundary_phone | 64 | 931 |
+| boundary_to_next_chunk | 1 | 125 |
+| email | 0 | 0 |
+| head_digit_fragment | 3 | 256 |
+| missing_previous_chunk | 0 | 0 |
+| phone | 66 | 1,030 |
+| resident_registration | 0 | 0 |
+
+The project-private name row is a distinct union, counted once per chunk/reference across its patterns. Other categories may overlap. There are 229 distinct rejected chunks and 3,618 rejected references; additional snippet-only rejections are zero. The 891 hidden references are retained behind a click, not deleted.
+
+## Status
+
+PASS: all current-stage identifier matches are within the explicit public scopes.
+
+## M5i Korean number particles
+
+The Korean overview now chooses its number particle from the last spoken Sino-Korean syllable. All layer labels L0–L34 and nine neuron/unit cases passed. The guide also uses the correct topic particle for L0. The English string dictionary is byte-equivalent under JSON serialization. All 7,071 compressed data files remain unchanged; no excerpt, source, privacy or concealment policy changed.
+
+## Size budget
+
+| Item | Bytes | Limit |
+|---|---:|---:|
+| New files | 238964254 | 400,000,000 |
+| New and modified files | 242889140 | 400,000,000 |
+| Entire stage including checksums | 247501474 | — |
+| Initial assets and metadata | 102053 | 2,000,000 |
+| Overview ready | 1092719 | 2,000,000 |
+| Cold layer grid, maximum | 1193461 | 2,000,000 |
+| Cold 50-row list, maximum | 1684608 | 2,000,000 |
+| Direct card, maximum | 1386416 | 2,000,000 |
+| Largest map data file | 1169766 | 25,000,000 |
+| Largest inflated map shard | 3523255 | 25,000,000 |
+
+All data and snippet counts, coverage and filter drops above are unchanged from M5h. Research values and the selected examples are unchanged. File sizes count bytes, not disk allocation.

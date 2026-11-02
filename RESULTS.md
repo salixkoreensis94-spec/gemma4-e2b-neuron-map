@@ -221,3 +221,93 @@ Round-2 aggregate data: `data/round2_sensors.json`, `round2_counts.json`, `round
 <!-- OPTIONAL BENCH KEY: insert approved A–D names/descriptions here, or leave empty. -->
 <!-- OPTIONAL ROUND2 SAMPLES: insert only approved fixed illustrations here, or leave empty. -->
 <!-- OPTIONAL NOTE PATTERN: insert an approved generic line here, or leave empty. -->
+
+## Round 3: a full neuron map
+
+### M1 — measured capture and replay
+
+| Quantity | Measured value |
+|---|---:|
+| Dev content tokens / chunks | 49,438,284 / 263,910 |
+| Neurons / zero-based layers | 337,920 / 35 |
+| Separate held-out targets | 561,716 |
+| Exact top-context replay | 141 neurons × top 20 = 2,820 windows |
+| Exact reservoir replay | 280 full activation rows / 2,703,360 coefficients |
+| Replay difference | 0, bit for bit, within the recorded scope |
+
+All-neuron count/histogram/top-offset checks and the one-to-one round-1 lens join passed. This is stored validation evidence, not inference rerun during staging. The map labels histogram estimates and reservoir sample statistics explicitly.
+
+### M2 — pre-registered: H rejected
+
+Three blind AI judges read 20 top windows plus four bands × six windows, with identical privacy, template-family and fallback rules across kinds. The 210-item pilot is separate and never pooled with the 1,820 main items (1,400 neurons / 210 directions / 210 mixed). Complete three-judge majority is primary.
+
+| Main statistic | Value |
+|---|---|
+| Neuron p=b/(b+c) | 0.385 [0.350, 0.420], b 280 / c 448 |
+| Random-direction p | 0.075 [0.044, 0.124] |
+| Neuron-minus-direction, Newcombe 95% | 0.310 [0.250, 0.357] |
+| Mixed unrelated c / all 210 | 0.914 (bar ≥0.80) |
+| Fleiss κ, all / neurons | 0.579 / 0.537 |
+| Individual-judge neuron p: Claude / GPT / Gemini | 0.568 / 0.388 / 0.374 |
+| Main missing judgments | 0 |
+
+The majority rule rejects H because the neuron p upper bound is below .5 and both controls pass. Unanimity is inconclusive: its mixed control fraction .781 fails. AI agreement is not human-validated truth, and judges saw input contexts only. The pilot was inconclusive (neuron p .316, difference interval crossed zero, Fleiss κ .605).
+
+### M3 — original failure, post-hoc amendment, exploratory judging
+
+| Stage | L5 | L15 | L27 |
+|---|---|---|---|
+| Original pre-registered CE gate | FAIL | FAIL | FAIL |
+| Mean-minus-clean CE denominator | −0.123524 | −0.268861 | −0.142892 |
+| Post-hoc KL score, k = 32 | .967682 | .970582 | .915994 |
+| Held-out dead fraction, k = 32 | .016113 | .270325 | .007141 |
+| Amended gate | PASS | FAIL (dead) | PASS |
+
+The clean forward and evaluator diagnosis found no evaluator bug. Mean ablation lowered CE with either BOS choice, making the original fidelity denominator unusable. The original FAIL remains the pre-registered outcome. The **post-hoc** amendment uses KL to clean predictions versus zero ablation, score ≥ .80 and dead ≤ .10.
+
+L15’s one k = 64 retry reached KL score .974357 but had 8,173/16,384 dead features (.498840), so the pre-registered M3 path stopped. AuxK ran with its fixed coefficient; held-out death increased after 5M. Stored weights show lower encoder norms in the dead group and unit decoder norms, without establishing a cause. No further tuning was performed.
+
+**Exploratory only: L5/L27, 392 fresh judgments, no M2 pooling.**
+
+| Item kind | One-concept a / planned | 95% Wilson |
+|---|---:|---|
+| Transcoder feature | 207/240 = .863 | [.813, .900] |
+| Neuron | 36/80 = .450 | [.346, .559] |
+| Random feature-space direction | 18/36 = .500 | [.345, .655] |
+| Mixed feature | 0/36 | [0, .096] |
+
+Feature-minus-neuron a share is +.413 [.293, .523]. Secondary p is .516 for features and .585 for neurons; their difference interval includes zero. Control bars pass, mixed c 33/36 = .917, Fleiss κ=.661, no missing judgments. This is **not** the originally gated primary test. In test–retest, 63/74 agreed neuron labels matched; all 11 changes went from M2 a to b/c. Packet boundary filtering and contrast effects are possible explanations. Random directions in sparse feature space themselves had 50% a, much higher than M2’s neuron-space directions; these baselines are not interchangeable.
+
+### M4 — pre-registered gate failure; no verdict
+
+The residual decomposition freezes upstream norm scales. The downstream direct path includes the actual final norm; indirect isolates changes added after the intervened layer. There were no judges.
+
+| Gate | Upstream | Downstream |
+|---|---|---|
+| V1 activation replay | PASS, 50,920/50,920 windows including replacements | PASS |
+| V2 component split | PASS, 100% of 44,860 windows | upstream-only gate |
+| V3 floor validity | FAIL, validation exclusions 64/210=.305 >.20 | FAIL, exclusions and f_0>.10 |
+| V4: 95% lower bound of f_a − f_0 ≥ .20 | PASS | FAIL |
+
+Intervals in this M4 diagnostic table are bootstrap intervals (B = 10,000).
+
+| Diagnostic only | Upstream | Downstream |
+|---|---|---|
+| f_c | 0.161 [0.127, 0.194] | 0.096 [0.070, 0.124] |
+| f_a | 0.406 [0.350, 0.463] | 0.342 [0.284, 0.401] |
+| f_b | 0.251 [0.187, 0.322] | 0.174 [0.105, 0.252] |
+| f_0 | 0.000 [0.000, 0.000] | 0.102 [0.051, 0.160] |
+| ρ | 0.396 | -0.024 |
+| 95% interval | [0.307, 0.502] | [-0.392, 0.187] |
+| 97.5% interval | [0.294, 0.519] | [-0.475, 0.215] |
+| 95% interval of f_a − f_0 | [0.350, 0.463] | [0.159, 0.317] |
+
+Both frozen side outcomes are **not_read**: no support/superposition verdict. Calibration needed 939 attempts to retain 700 pairs. L34 is excluded downstream. Failed-side form correlations, dominant classes and traced-cluster readings are not interpreted.
+
+<!-- M4_POSTHOC_START -->
+#### Post-hoc notes (not part of the pre-registered result)
+
+**A — floor diagnostics.** At the measured shared shares, f_c < f_a means ρ=(f_c−f_0)/(f_a−f_0) falls as f_0 rises. The upstream f_0 was already zero. Holding these measured thresholds and f_c/f_a fixed, no admissible redesign of the floor share could lift upstream ρ above f_c/f_a≈0.396 or reach the 0.5 support bar. This algebraic bound is a post-hoc observation, not a passed-gate inference or a superposition verdict.
+
+Weight-summed pseudo-neurons often failed to fire on both donors’ windows, causing exclusions: 239 of 939 calibration attempts, 64 of 210 validation items, and 19 of 42 validation items in L21–27. These failures limit the floor’s validity; they do not repair the frozen gates.
+<!-- M4_POSTHOC_END -->

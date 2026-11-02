@@ -1,0 +1,17 @@
+/* Node-only offline test of the browser decoder and actual inverted indexes. */
+'use strict';const fs=require('fs'),path=require('path'),zlib=require('zlib'),vm=require('vm');
+const root=path.resolve(__dirname,'../..'),data=path.join(root,'docs/map/data/round3/stats');
+vm.runInThisContext(fs.readFileSync(path.join(__dirname,'decoder.js'),'utf8'));
+const R=globalThis.Round3,expected=JSON.parse(fs.readFileSync(path.join(data,'validation_examples.json'),'utf8'));let checks=[];
+function token(id){const v=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(data,'vocab',String(Math.floor(id/1024)).padStart(3,'0')+'.json.gz'))));return v[id];}
+for(const [l,n] of [[0,2613],[27,1939],[34,11143]]){const file=`L${String(l).padStart(2,'0')}_${String(Math.floor(n/256)).padStart(2,'0')}.bin.gz`,b=zlib.gunzipSync(fs.readFileSync(path.join(data,'cards',file))),ab=b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),c=R.decodeCard(ab,l,n);if(c.layer!==l||c.neuron!==n||!Number.isFinite(c.mean)||c.chunkIds.length!==20)throw Error('Card resolution failed');
+const e=expected.find(r=>r.layer===l&&r.neuron===n);for(const [k,value] of Object.entries(e)){const actual=c[k],want=['quantiles','topValues','bottomValues'].includes(k)?value.map(Math.fround):value;if(JSON.stringify(actual)!==JSON.stringify(want))throw Error('Source-field mismatch: '+k);}
+const t=c.fireIds.find((t,i)=>c.fireCounts[i]>0&&R.normalize(token(t)).length>0&&token(t)!=='[withheld token]'),q=R.normalize(token(t)),index=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(data,'index',R.bucket(q)+'.json.gz'))));if(!index[q].includes(R.gid(l,n)))throw Error('Token resolution failed');if(R.locate(R.gid(l,n)).join(':')!==[l,n].join(':'))throw Error('Global ID mismatch');checks.push({layer:l,neuron:n,number_lookup:true,token_lookup:true,source_fields_equal:true,query_sha256:require('crypto').createHash('sha256').update(q).digest('hex')});}
+const open=path.join(root,'docs/map/data/round3/snippets/open'),coverage=JSON.parse(fs.readFileSync(path.join(open,'coverage.json'),'utf8')),e=coverage.example_card;
+const file=`L${String(e.layer).padStart(2,'0')}_${String(Math.floor(e.neuron/256)).padStart(2,'0')}.bin.gz`,raw=zlib.gunzipSync(fs.readFileSync(path.join(data,'cards',file))),c=R.decodeCard(raw.buffer.slice(raw.byteOffset,raw.byteOffset+raw.byteLength),e.layer,e.neuron),rank=e.rank-1;
+if(c.chunkIds[rank]!==e.chunk_id||c.offsets[rank]!==e.offset)throw Error('Open card position mismatch');
+const refs=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(open,'references',String(Math.floor(e.chunk_id/256)).padStart(4,'0')+'.json.gz')))),ref=refs[`${e.chunk_id}:${e.offset}`],entry=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(open,ref.file))))[ref.id];
+if(!entry||entry.end-entry.start>32||ref.a<0||ref.b<=ref.a||ref.b>entry.text.length)throw Error('Open snippet resolution failed');
+const tq=R.normalize(token(c.fireIds.find((t,i)=>c.fireCounts[i]>0&&R.normalize(token(t)).length>0&&token(t)!=="[withheld token]"))),ti=JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(data,"index",R.bucket(tq)+".json.gz"))));if(!ti[tq].includes(R.gid(e.layer,e.neuron)))throw Error("Open card token lookup failed");
+checks.push({number_lookup:true,token_lookup:true,layer:e.layer,neuron:e.neuron,context:e.rank,chunk_id:e.chunk_id,snippet_resolves:true,within_32_tokens:true});
+console.log(JSON.stringify({passed:true,checks,context_text_printed:false}));

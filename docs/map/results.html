@@ -1,0 +1,151 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>연구 결과 / Research results</title><link rel="stylesheet" href="app.css"><main><p><a href="index.html">지도로 돌아가기 / Back to the map</a></p><h1>연구 결과 원문 (영어) / Research report</h1><p>기존 RESULTS.md의 2·3차 결과를 그대로 옮겼습니다. / Unchanged Round 2 and Round 3 sections from RESULTS.md.</p><section id="round-3-a-full-neuron-map"><pre class="report-copy" style="white-space:pre-wrap;overflow-wrap:anywhere;font:inherit">## Round 3: a full neuron map
+
+### M1 — measured capture and replay
+
+| Quantity | Measured value |
+|---|---:|
+| Dev content tokens / chunks | 49,438,284 / 263,910 |
+| Neurons / zero-based layers | 337,920 / 35 |
+| Separate held-out targets | 561,716 |
+| Exact top-context replay | 141 neurons × top 20 = 2,820 windows |
+| Exact reservoir replay | 280 full activation rows / 2,703,360 coefficients |
+| Replay difference | 0, bit for bit, within the recorded scope |
+
+All-neuron count/histogram/top-offset checks and the one-to-one round-1 lens join passed. This is stored validation evidence, not inference rerun during staging. The map labels histogram estimates and reservoir sample statistics explicitly.
+
+### M2 — pre-registered: H rejected
+
+Three blind AI judges read 20 top windows plus four bands × six windows, with identical privacy, template-family and fallback rules across kinds. The 210-item pilot is separate and never pooled with the 1,820 main items (1,400 neurons / 210 directions / 210 mixed). Complete three-judge majority is primary.
+
+| Main statistic | Value |
+|---|---|
+| Neuron p=b/(b+c) | 0.385 [0.350, 0.420], b 280 / c 448 |
+| Random-direction p | 0.075 [0.044, 0.124] |
+| Neuron-minus-direction, Newcombe 95% | 0.310 [0.250, 0.357] |
+| Mixed unrelated c / all 210 | 0.914 (bar ≥0.80) |
+| Fleiss κ, all / neurons | 0.579 / 0.537 |
+| Individual-judge neuron p: Claude / GPT / Gemini | 0.568 / 0.388 / 0.374 |
+| Main missing judgments | 0 |
+
+The majority rule rejects H because the neuron p upper bound is below .5 and both controls pass. Unanimity is inconclusive: its mixed control fraction .781 fails. AI agreement is not human-validated truth, and judges saw input contexts only. The pilot was inconclusive (neuron p .316, difference interval crossed zero, Fleiss κ .605).
+
+### M3 — original failure, post-hoc amendment, exploratory judging
+
+| Stage | L5 | L15 | L27 |
+|---|---|---|---|
+| Original pre-registered CE gate | FAIL | FAIL | FAIL |
+| Mean-minus-clean CE denominator | −0.123524 | −0.268861 | −0.142892 |
+| Post-hoc KL score, k = 32 | .967682 | .970582 | .915994 |
+| Held-out dead fraction, k = 32 | .016113 | .270325 | .007141 |
+| Amended gate | PASS | FAIL (dead) | PASS |
+
+The clean forward and evaluator diagnosis found no evaluator bug. Mean ablation lowered CE with either BOS choice, making the original fidelity denominator unusable. The original FAIL remains the pre-registered outcome. The **post-hoc** amendment uses KL to clean predictions versus zero ablation, score ≥ .80 and dead ≤ .10.
+
+L15’s one k = 64 retry reached KL score .974357 but had 8,173/16,384 dead features (.498840), so the pre-registered M3 path stopped. AuxK ran with its fixed coefficient; held-out death increased after 5M. Stored weights show lower encoder norms in the dead group and unit decoder norms, without establishing a cause. No further tuning was performed.
+
+**Exploratory only: L5/L27, 392 fresh judgments, no M2 pooling.**
+
+| Item kind | One-concept a / planned | 95% Wilson |
+|---|---:|---|
+| Transcoder feature | 207/240 = .863 | [.813, .900] |
+| Neuron | 36/80 = .450 | [.346, .559] |
+| Random feature-space direction | 18/36 = .500 | [.345, .655] |
+| Mixed feature | 0/36 | [0, .096] |
+
+Feature-minus-neuron a share is +.413 [.293, .523]. Secondary p is .516 for features and .585 for neurons; their difference interval includes zero. Control bars pass, mixed c 33/36 = .917, Fleiss κ=.661, no missing judgments. This is **not** the originally gated primary test. In test–retest, 63/74 agreed neuron labels matched; all 11 changes went from M2 a to b/c. Packet boundary filtering and contrast effects are possible explanations. Random directions in sparse feature space themselves had 50% a, much higher than M2’s neuron-space directions; these baselines are not interchangeable.
+
+### M4 — pre-registered gate failure; no verdict
+
+The residual decomposition freezes upstream norm scales. The downstream direct path includes the actual final norm; indirect isolates changes added after the intervened layer. There were no judges.
+
+| Gate | Upstream | Downstream |
+|---|---|---|
+| V1 activation replay | PASS, 50,920/50,920 windows including replacements | PASS |
+| V2 component split | PASS, 100% of 44,860 windows | upstream-only gate |
+| V3 floor validity | FAIL, validation exclusions 64/210=.305 &gt;.20 | FAIL, exclusions and f_0&gt;.10 |
+| V4: 95% lower bound of f_a − f_0 ≥ .20 | PASS | FAIL |
+
+Intervals in this M4 diagnostic table are bootstrap intervals (B = 10,000).
+
+| Diagnostic only | Upstream | Downstream |
+|---|---|---|
+| f_c | 0.161 [0.127, 0.194] | 0.096 [0.070, 0.124] |
+| f_a | 0.406 [0.350, 0.463] | 0.342 [0.284, 0.401] |
+| f_b | 0.251 [0.187, 0.322] | 0.174 [0.105, 0.252] |
+| f_0 | 0.000 [0.000, 0.000] | 0.102 [0.051, 0.160] |
+| ρ | 0.396 | -0.024 |
+| 95% interval | [0.307, 0.502] | [-0.392, 0.187] |
+| 97.5% interval | [0.294, 0.519] | [-0.475, 0.215] |
+| 95% interval of f_a − f_0 | [0.350, 0.463] | [0.159, 0.317] |
+
+Both frozen side outcomes are **not_read**: no support/superposition verdict. Calibration needed 939 attempts to retain 700 pairs. L34 is excluded downstream. Failed-side form correlations, dominant classes and traced-cluster readings are not interpreted.
+
+&lt;!-- M4_POSTHOC_START --&gt;
+#### Post-hoc notes (not part of the pre-registered result)
+
+**A — floor diagnostics.** At the measured shared shares, f_c &lt; f_a means ρ=(f_c−f_0)/(f_a−f_0) falls as f_0 rises. The upstream f_0 was already zero. Holding these measured thresholds and f_c/f_a fixed, no admissible redesign of the floor share could lift upstream ρ above f_c/f_a≈0.396 or reach the 0.5 support bar. This algebraic bound is a post-hoc observation, not a passed-gate inference or a superposition verdict.
+
+Weight-summed pseudo-neurons often failed to fire on both donors’ windows, causing exclusions: 239 of 939 calibration attempts, 64 of 210 validation items, and 19 of 42 validation items in L21–27. These failures limit the floor’s validity; they do not repair the frozen gates.
+&lt;!-- M4_POSTHOC_END --&gt;
+</pre></section><section id="round-2-residual-sensors"><pre class="report-copy" style="white-space:pre-wrap;overflow-wrap:anywhere;font:inherit">## Round 2: residual sensors
+
+**Negative result: no residual sensor passed the frozen bars.** The question was whether residual readouts can detect character failures better than text or token surprise, without changing the reply. R1 tests ownership confusion (whose person, event or fact); R2 assistant/AI identity drift; R3 formulaic AI tone; R4 unsupported memory, prior-conversation or date/time claims. The primary model was Gemma 4 E2B Q4_K_M with four per-character LoRA adapters (A–D); adapters are not distributed.
+
+Frozen reply bars required AUROC ≥0.85, ≥0.05 above the best word/character/token-surprise AUROC, held-out precision ≥0.75 at a dev precision ≥0.80 threshold, and recall ≥0.10 above the dev-selected text/rule comparator while both retained precision ≥0.75. Pre-generation bars required AUROC ≥0.80, ≥0.05 above pre-generation word/character baselines, and held-out precision ≥0.50 plus recall ≥0.30 at a dev precision ≥0.60 threshold. Every sensor also needed ≥40 agreed positive held-out sensor units. Thresholds required at least five predicted positives on dev; no qualifying threshold meant +∞ and failure, with no held-out retuning.
+
+| Reply sensor | Residual AUROC [95% family CI] | Best text AUROC (character) | Token-surprise AUROC | Residual − best baseline | Held-out precision / recall | Verdict |
+|---|---|---:|---:|---:|---|---|
+| R1 ownership | 0.744 [0.648, 0.823] | 0.762 | 0.566 | −0.018 | 0.355 / 0.193 | FAIL |
+| R3 AI tone | 0.906 [0.851, 0.947] | 0.913 | 0.719 | −0.007 | 0.000 / 0.000 | FAIL |
+| R4 memory | 0.802 [0.658, 0.902] | 0.778 | 0.577 | +0.024 | 0.000 / 0.000 | FAIL |
+
+Token surprise selected mean NLL on dev from mean, maximum and highest-NLL 10% tail; it was computed from untempered logits using the same model/adapter as the residual. These AUROCs measure ranking against agreed AI labels, not calibrated awareness of an error. R3&#x27;s high reply AUROC did not improve on the character baseline or yield a qualifying dev operating threshold. R4 missed both the absolute AUROC and added-value bars. R2 was descriptive only: its frozen held-out raw counts were 11 positive / 842 negative / 11 disagreements, with 10 positives in the base arm and a label-definition problem around ordinary professional disclaimers. No R2 sensor was trained or passed.
+
+| Pre-generation sensor | Residual AUROC [95% family CI] | Best pre-text AUROC | Held-out positive / negative units (positive families) | Dev operating threshold | Verdict |
+|---|---|---:|---|---|---|
+| R1 | 0.645 [0.422, 0.865] | 0.612 (word) | 16 / 295 (7) | none qualifying | UNDERPOWERED |
+| R3 | 0.854 [0.737, 0.928] | 0.653 (word) | 34 / 209 (17) | none qualifying | UNDERPOWERED |
+| R4 | 0.766 [0.613, 0.908] | 0.806 (word) | 14 / 262 (6) | none qualifying | UNDERPOWERED |
+
+All three pre-generation sensors also had zero detections at their frozen thresholds. R3 is a descriptive signal, not a usable sensor: it missed the power and operating bars. The same prompt readout cannot distinguish LoRA arm a from base-generated arm c when their prompts are identical under the primary LoRA capture model.
+
+| Selection diagnostic (dev OOF only) | Actual AUROC | Maximum of 20 row shuffles | Maximum of 20 family-block shuffles |
+|---|---:|---:|---:|
+| R1 reply | 0.918 | 0.637 | 0.741 |
+| R1 pre | 0.928 | 0.710 | 0.841 |
+| R3 reply | 0.871 | 0.599 | 0.788 |
+| R3 pre | 0.729 | 0.632 | 0.713 |
+| R4 reply | 0.809 | 0.603 | 0.779 |
+| R4 pre | 0.829 | 0.703 | 0.773 |
+
+Each shuffle repeated the full layer/feature/C selection with fixed grouped folds. Family-block shuffles moved label blocks only among equal-sized families; limited movable groups constrain that control. Their higher maxima than row shuffles are consistent with selection exploiting family structure. The R1 dev-to-held-out drop also includes the N0b→N0c distribution change; these diagnostics do not isolate its causes or establish a significance test. In particular R3 pre dev OOF 0.729 is close to the family-block maximum 0.713.
+
+The separate owner probe was reporting only, trained on correct dev spans rather than bad-reply labels. On 44 correct held-out spans its LoRA span-last true-owner accuracy was 0.977. At 19 natural slip spans it read the asserted wrong surface owner much more often than the context&#x27;s true owner:
+
+| Reporting-only owner readout | Correct held-out true-owner accuracy | Slip true-owner / surface-owner accuracy |
+|---|---:|---|
+| Majority owner | 0.795 | 0.947 / 0.053 |
+| Span-character baseline | 0.977 | 0.053 / 0.947 |
+| LoRA span-last (L2) | 0.977 | 0.105 / 0.895 |
+| LoRA immediately before span (L30) | 0.886 | 0.105 / 0.895 |
+
+| Separate minimal owner flips | Pairs | Flipped − original span NLL, nats [95% family CI] | Span-last Δp(true owner) [95% family CI] |
+|---|---:|---|---|
+| N0b dev analysis | 28 | +2.633 [2.156, 3.041] | −0.087 [−0.109, −0.074] |
+| N0c held-out analysis | 23 | +4.471 [3.624, 5.754] | −0.424 [−0.461, −0.390] |
+
+Before the edited span, the counterfactual readout difference was zero because the prefix was identical. Constructed flips were more surprising, but they were not natural errors and never entered sensor training or slip totals. The natural-slip readout offers no evidence here of a correct hidden owner representation that a steering intervention could recover. This is a limited probe reading, not proof about all internal knowledge, causal mechanisms or fixability. No steering/N2 was run. **No sensor passed.**
+
+&lt;!-- BEGIN OPTIONAL INPUT FOLLOW-UP --&gt;
+### Input-side follow-up
+
+At ownership slips the owner probe usually read the wrong owner, so an input-side alternative was tried: add a note entry for a user-side person or pet whose name collides with the character or its own relations. An a versus a′ check used 46 scenarios with byte-identical app-off and recorded N0c-a notes, reusing 138 baseline replies and generating 138 a′ replies; both were judged again together by two independent AI judges. All three bars missed: better 10 / worse 12 / tied 24 (one-sided sign-test p=0.738; required p≤0.10 and net improvement≥5), agreed ownership slips 27→26 (required ≤18), and note echo 6/138=4.35% (required ≤3%). Disagreements remained unknown. Nonblind reading suggested that a contrast inside parentheses primed the character&#x27;s own ownership claim; that explanation was not causally isolated. Four separately reported scenarios did not enter the bars. This is a controlled prompt replay, not a live-app effectiveness measurement. N0c-a used a hand-authored ledger with the app&#x27;s collision exclusion, rather than the app&#x27;s full reader; the matched-note restriction matters. No app source, prompt text or generated reply is included here.
+&lt;!-- END OPTIONAL INPUT FOLLOW-UP --&gt;
+
+Round-2 aggregate data: `data/round2_sensors.json`, `round2_counts.json`, `round2_owner.json` and `round2_namesakes.json`. Frozen rule copies and original/copy hashes are under `preregistration/`; their publication redactions do not create a new historical preregistration.
+
+&lt;!-- OPTIONAL BENCH KEY: insert approved A–D names/descriptions here, or leave empty. --&gt;
+&lt;!-- OPTIONAL ROUND2 SAMPLES: insert only approved fixed illustrations here, or leave empty. --&gt;
+&lt;!-- OPTIONAL NOTE PATTERN: insert an approved generic line here, or leave empty. --&gt;
+
+</pre></section></main></html>

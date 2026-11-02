@@ -1,0 +1,11 @@
+{
+  "post_hoc": true,
+  "exploratory": true,
+  "original_CE_gate": "FAIL",
+  "pre_registered_M3_path": "stopped",
+  "choice_verbatim": "[approved scope; original wording withheld]",
+  "sha256": "346664d8464aad5c061d52ac6df16de1b371e02402540ecdba0af7a09746c95a",
+  "freeze_utc": "2026-10-31T18:30:46.103340+00:00",
+  "freeze_KST": "2026-11-01T03:30:46.103340+09:00",
+  "feature_activations_or_context_read_for_selection": false
+}

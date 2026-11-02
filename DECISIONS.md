@@ -10,3 +10,9 @@ Date: 2026-10-27
 6. Human review remains aggregate counts only. Include no reviewer quotations, individual marks or free-text notes.
 
 This record applies local release preparation only. Nothing has been published.
+
+## Round 3 staged decisions
+
+Display choices confirmed on 2026-11-02: AI labels are shown on labelled cards with the input-only AI-judge caveat. Removal requests use a GitHub Issue naming a neuron, context number or pointer; never paste the text itself. Post-hoc floor note A is included after the M4 tables under its own heading; it does not change the failed frozen gates or create a verdict. The separate ordering note is excluded.
+
+Open-license excerpts only; FineWeb has statistics and exact pointers. Large map/snippet data has one Pages copy. All 20 context ranks remain eligible, with 32-token windows and conservative whole-chunk/boundary/privacy checks. No commit, push or publication was made during staging. Final push approval and release-date setting remain separate steps.
