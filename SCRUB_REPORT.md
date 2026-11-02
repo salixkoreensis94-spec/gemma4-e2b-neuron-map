@@ -64,23 +64,27 @@ The project-private name row is a distinct union, counted once per chunk/referen
 
 PASS: all current-stage identifier matches are within the explicit public scopes.
 
-## M5i Korean number particles
+## M5k failed-load recovery
 
-The Korean overview now chooses its number particle from the last spoken Sino-Korean syllable. All layer labels L0–L34 and nine neuron/unit cases passed. The guide also uses the correct topic particle for L0. The English string dictionary is byte-equivalent under JSON serialization. All 7,071 compressed data files remain unchanged; no excerpt, source, privacy or concealment policy changed.
+The shared JSON/gzip cache deduplicates pending work and retains successful loads. It removes an entry when fetch, JSON parsing or gzip decompression rejects, checking promise identity before removal. Fetch retries once after 250 ms for a rejected network fetch or a 5xx response; 404 and other client errors do not retry automatically. The browse metadata/overview promise wrappers also forget rejected loads.
+
+Overview, grid, list and card failures now offer a short Korean/English message and a Try again button inside the affected view. Card evidence entries can retry their failed data too. Rendering keeps its generation/request guards, and old retry buttons cannot revive a view after navigation. Startup reads restored filters once and avoids a second automatic render of a missing overview shard.
+
+The local fetch-stub matrix covers Korean/English at modeled desktop/375 px widths: eight automatic recoveries, seven manual recoveries, four explicit view-failure cases, and five delayed-request/stale-button races. JSON/gzip decode failures evict their entries, a 404 on one layer does not block another, and cached successes remain reusable. M5j filtering, restore, sort, grid tap, cards, particles and offline/privacy/budget checks were rerun. These are existing JS/DOM model checks, not a fresh real-browser measurement. All 7,071 compressed data files and privacy/snippet policies remain unchanged. No corpus or snippet text appears in test output.
 
 ## Size budget
 
 | Item | Bytes | Limit |
 |---|---:|---:|
-| New files | 238964254 | 400,000,000 |
-| New and modified files | 242889140 | 400,000,000 |
-| Entire stage including checksums | 247501474 | — |
-| Initial assets and metadata | 102053 | 2,000,000 |
-| Overview ready | 1092719 | 2,000,000 |
-| Cold layer grid, maximum | 1193461 | 2,000,000 |
-| Cold 50-row list, maximum | 1684608 | 2,000,000 |
-| Direct card, maximum | 1386416 | 2,000,000 |
+| New files | 238994718 | 400,000,000 |
+| New and modified files | 242920774 | 400,000,000 |
+| Entire stage including checksums | 247533108 | — |
+| Initial assets and metadata | 108535 | 2,000,000 |
+| Overview ready | 1099201 | 2,000,000 |
+| Cold layer grid, maximum | 1199943 | 2,000,000 |
+| Cold 50-row list, maximum | 1691090 | 2,000,000 |
+| Direct card, maximum | 1392898 | 2,000,000 |
 | Largest map data file | 1169766 | 25,000,000 |
 | Largest inflated map shard | 3523255 | 25,000,000 |
 
-All data and snippet counts, coverage and filter drops above are unchanged from M5h. Research values and the selected examples are unchanged. File sizes count bytes, not disk allocation.
+Data, coverage, filtering and research values are unchanged. File sizes count bytes, not disk allocation.
