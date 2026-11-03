@@ -91,3 +91,34 @@ Copyright 2026 Ryou Jiho.
 
 이름 목록 행은 여러 이름 패턴에 걸린 청크·참조를 각각 한 번만 센 합집합이다. 다른 범주끼리는 겹칠 수 있다. 고유 제외는 청크 229개·참조 3,618개이며 snippet-only 추가 제외는 0이다. 가림 참조 891개는 삭제와 다르다.
 <!-- SNIPPET_COUNTS_END -->
+
+## 4라운드 F: 특징 지도 (F2 스테이지)
+
+L5·L27 트랜스코더 특징 32,768개를 기존 뉴런 지도 옆에 더했습니다. 안내·개요·목록의 전환 링크로 이동하며, 같은 토큰 검색에서 뉴런과 특징 결과를 각각 표시합니다. 특징 카드에는 상위 20문맥의 토큰 개수, 공개 가능한 근거 문장, 정적 렌즈, 가까운 뉴런 5개, 탐색 AI 라벨, 숫자 접기가 있습니다. L5·L27 뉴런 카드에서도 가까운 특징으로 이동합니다. 기존 뉴런 데이터는 바이트 단위로 유지합니다.
+
+F1은 같은 개발 스트림 49,438,284토큰·263,910청크의 기술 통계입니다. 죽은 특징은 양쪽 0개, 백만 토큰당 1회 미만은 L5 91개·L27 20개, 10% 초과는 0개·1개입니다. 발화율 중앙값은 0.050859%·0.085892%, 토큰당 켜지는 특징은 31.999829개·31.998973개입니다. 새 가설 검정은 없습니다.
+
+트랜스코더는 한 층의 출력을 적은 방향의 합으로 흉내 내도록 학습한 모델이며, 그 방향과 켜지는 세기를 특징이라 부릅니다. 층마다 16,384개 중 약 32개만 켜져서 개별 특징은 드물게 켜집니다. 색상은 층별 최댓값·발화율을 각각 0·10·25·50·75·90·99·100 백분위로 나눕니다. 뉴런과 특징 또는 다른 층의 같은 색을 같은 값으로 읽지 마세요. 시작점은 층별 관측 최댓값 1위, 동률이면 작은 번호입니다. 뜻을 보고 고르지 않았습니다.
+
+3라운드 원 CE 게이트는 세 층 모두 실패했습니다. 사후 KL 수정 기준에서 L5·L27은 통과했지만 L15는 k32의 죽은 특징 27.0325%, 재시도 k64의 49.8840%가 10% 이하 막대를 넘었습니다. 사전등록 경로는 중단됐고, 이 지도는 이후 탐색 경로를 재사용합니다.
+
+렌즈는 S1 write-column 규약에 따라 디코더 방향을 실제 출력 정규화·어휘로 읽은 양끝 50개 pre-softcap 값입니다. 확률이나 개입 효과가 아닙니다. 가까운 단위는 같은 층 디코더 행과 뉴런 ffn_down 열의 코사인 상위 5개이며, 두 방향에서 독립적으로 순위를 매깁니다. 함께 켜짐이나 원인을 뜻하지 않습니다.
+
+AI 라벨은 동결된 M3 탐색 패킷의 특징 240개만 3심사원 다수결 범주로 연결합니다. 입력 문맥만 본 탐색 AI 판단이며 사람 검증도 사전등록 검정도 아니라는 주의문을 표시합니다. 심사원의 뜻풀이·이유·패킷은 배포하지 않습니다. 근거 문장은 M5와 같은 라이선스, 청크·문서 경계·창 개인정보 검사, 가림 규칙을 적용합니다. 열린 4출처만 최대 32토큰 창을 보여 주고 웹은 수치와 포인터만 보입니다. 1,024칸 히스토그램은 정확한 개수를 저장하며 화면에서 64묶음 막대와 개수 표로 읽습니다. 표본 토큰은 전체 8,192위치 reservoir 중 양수인 곳의 개수입니다.
+
+
+### F1b3 — 켜면 튀어나오는 말 (수정안 결과는 모두 post hoc)
+
+뉴런 438개·특징 440개, 총 878개의 기술적 개입 자료이며 의미 심사나 새 가설 검정은 아닙니다. 뉴런은 GELU×up 뒤 down 전에 관측 최댓값×세기로 고정하고, 특징은 post-FFN norm 전 원 MLP 출력에 관측 최댓값×세기×디코더 방향을 더합니다. BOS·패딩은 건드리지 않고 이후 유효 위치의 prefill·decode에 적용합니다. 강제로 켠 결과는 뜻의 증명이 아닙니다.
+
+고정한 네 시작에서 greedy 1개와 독립 시드 표본 2개(temperature 0.8, top-p 0.95, 최대 32 새 토큰)를 만듭니다. 같은 시작·시드의 공용 기준선을 두 세기 옆에 보이며 표본·무작위 대조군·수치는 접어 둡니다. 층별 두 고정 Gaussian 방향은 네 시작의 greedy만 생성하고 원 MLP 개입 L2 크기를 맞춥니다. 이후 잔차·출력 효과를 맞춘다는 뜻은 아닙니다. EOG 1/106을 빼고 토큰 위치를 셉니다.
+
+원 동결 규칙은 2026-11-03 15:18 KST FAIL/BLOCKED였습니다. 0.25/0.5/1/2의 유창성은 166/240, 169/240, 163/240, 155/240(0.692/0.704/0.679/0.646)으로 0.80 미만입니다. 기준선 자체가 12개 중 3개에서 반복 기준을 어겨 부모는 도달 불가능한 잣대의 설계 오류로 판정했습니다. 소유자는 “잣대만 고쳐 재판정 (Recommended)”을 골랐고 수정 수치를 계산하기 전 15:29:29 KST 수정안을 동결했습니다. 원 FAIL은 보존합니다. 적격 기준에 기준선 UTF-8·반복 통과만 더했고, 최소 8개·유창성 80%·edit 0.15·가장 작은 두 통과 세기 규칙은 유지했습니다. 본 생성과 기준선 agreement에는 전체 12개를 씁니다.
+
+사후 수정 아래 적격은 9/12, 유창성은 151/180·154/180·145/180·142/180, edit 중앙값은 0.502397·0.593403·0.673264·0.699653입니다. 선택 세기는 0.25·0.5이며 post hoc입니다. 2026-11-03 19:07 KST 노트북에서 `tools/compare_old_tasks.py --old F1b/tasks --new F1b3/tasks`로 다시 비교한 출력 `F/F1b3/parent_checks/compare_old_tasks_20261103.out`을 검증했습니다. SHA256은 `00de6c58738eca18bc7f84faf4f15e685b36a4a91077974d4340ba90272423d2`이며 1,092 case·99/99 task 일치, token ID·metric·NLL 불일치 0, 누락·추가 task 0입니다. 별도 `task_comparison_dry_run.json`은 CPU 자기 비교입니다. 저장된 재실행 출력의 해시·개수·명령·시간을 공개 `f1b_provenance.json`에도 기록했습니다. F1b3는 18:43 KST DONE 통과(878개, 38 shard, 새 batch 7,169·재사용 19; post hoc)로 끝났습니다.
+
+자기 설명은 시도했지만 최고 4/200(언어별 2/100, L5 ×2 또는 ×4)으로 동결 막대 전체 100/200·언어별 40/100에 실패했고 L15·L27은 0입니다. 기준을 완화하지 않았으며 어느 단위에도 설명을 만들지 않았습니다. 모든 F1b3 보정·생성·겹침 결과는 post hoc입니다. 수정안 SHA256: `51ff412c1fe16dbd4a85d6ce3ab4e8f395e27d4aa15d8d300f00ebb718c11276`. calibration freeze SHA256: `43dbb5477e5f86b5a7eb77c468b3539f56a63ce6c154a4b702b8c207a7459ac9`, `posthoc: true`.
+
+강제로 켜도 글은 대체로 기준선과 가깝고 일부 단위만 자기 상위 문맥 토큰을 더 끌어옵니다. 정적 렌즈 상위 10토큰 적중도 드뭅니다. 카드의 agreement는 원 배열·분모 그대로이며 브라우저에서 다시 계산하지 않습니다. 목표·대조군·기준선 글 전체에 M5 개인정보·정체성·가림 필터를 적용했습니다. 차단된 행은 글과 복원 가능한 token ID를 싣지 않으며 어휘 필터 글은 클릭 뒤 보입니다. 비공개 원 shard는 stage 밖에 둡니다.
+
+Cards store token-ID equality against the same start and seed as `same_as_baseline` (null if either side is withheld). Each card counts 8 most-likely-token and 16 seeded target cells separately, with withheld comparisons apart. Starts whose target cells all match are folded. The published `top_context_token_ids` are the source agreement set after M5 card-token scrubbing; rejected IDs are omitted. Nonwithheld rows have aligned token pieces (end tokens have empty pieces; scrubbed pieces are null). Text is marked only when the pieces are strings and concatenate exactly to the stored text; otherwise it stays plain. Marks denote strongest-context tokens, never meaning; lens counts stay in the metrics fold. Raw output preserves markdown symbols. / 기준선 일치·가림은 따로 세며 전부 같은 시작은 접습니다. 상위 문맥 토큰 집합은 M5 카드 토큰 필터 뒤 ID만 공개하고, 토큰 조각의 연결이 원문과 정확히 같을 때만 표식으로 보입니다. 표식은 뜻이 아니며 마크다운 기호도 원 출력 그대로입니다.

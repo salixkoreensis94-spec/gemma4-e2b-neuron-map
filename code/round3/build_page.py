@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 def archive(p):
     if p.exists():
-        target=(ROOT.parents[1] if ROOT.parent.name=='stage' else ROOT.parent)/'_superseded'/'round3_page'/str(time.time_ns())/p.name
+        target=(ROOT.parents[1] if ROOT.parent.name=='stage' else ROOT.parent)/'_tmp'/'round3_page'/str(time.time_ns())/p.name
         target.parent.mkdir(parents=True,exist_ok=True);p.rename(target)
 def report_copy():
     import html
@@ -27,7 +27,7 @@ def main():
             raw[offset::stride]=bytes(len(raw[offset::stride]));archive(p);p.write_bytes(gzip.compress(bytes(raw),mtime=0))
     for p in data.glob('*.json'):
         target=compact/p.name;archive(target);shutil.copy2(p,target)
-    for name in ['decoder.js','reader.js','browse.js','app.js','app.css']:
+    for name in ['decoder.js','reader.js','browse.js','feature.js','app.js','app.css']:
         p=out/name;archive(p);shutil.copy2(ROOT/'code/round3'/name,p)
     archive(out/'index.html');shutil.copy2(ROOT/'code/round3/map.html',out/'index.html')
     config=json.loads((ROOT/'code/round3/map-config.json').read_text());config['show_ai_labels']=config['show_ai_labels'] and not a.exclude_ai_labels

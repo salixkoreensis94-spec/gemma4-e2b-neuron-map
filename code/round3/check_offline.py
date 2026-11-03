@@ -40,7 +40,7 @@ def main():
     del entries_cache
     vocab_sizes={int(p.name.split('.')[0]):p.stat().st_size for p in (stats/'vocab').glob('*.json.gz')};pointer_sizes={int(p.name.split('.')[0]):p.stat().st_size for p in (stats/'pointers').glob('*.json.gz')};ref_sizes={int(p.name.split('.')[0]):p.stat().st_size for p in (opened/'references').glob('*.json.gz')};pointers={}
     for p in (stats/'pointers').glob('*.json.gz'):pointers.update(json.loads(gzip.decompress(p.read_bytes())))
-    initial=['index.html','decoder.js','reader.js','browse.js','app.js','app.css','config.json','data/round3/stats/schema.json','data/round3/stats/manifest.json','data/round3/stats/layers.json','data/round3/stats/sources.json','data/round3/stats/round1.json','data/round3/stats/starting.json'];first=sum((ROOT/'docs/map'/p).stat().st_size for p in initial)
+    initial=['index.html','decoder.js','reader.js','browse.js','feature.js','app.js','app.css','config.json','data/round3/stats/schema.json','data/round3/stats/manifest.json','data/round3/stats/layers.json','data/round3/stats/sources.json','data/round3/stats/round1.json','data/round3/stats/starting.json','data/round4/metadata.json'];first=sum((ROOT/'docs/map'/p).stat().st_size for p in initial)
     deep=0;deep_card=None;count=0;referenced_slots=0;hidden_slots=0
     for p in (stats/'cards').glob('*.bin.gz'):
         raw=gzip.decompress(p.read_bytes());assert len(raw)%580==0
@@ -61,7 +61,7 @@ def main():
     coverage=json.loads((opened/'coverage.json').read_text());assert count==337920 and referenced_slots==coverage['published_references'];assert sum(source_snippets.values())==coverage['published_unique_snippets'];assert manifest['snippets']['context_limit']==20
     assert first<=2000000 and first+deep<=2000000
     assert sum(p.stat().st_size for p in ROOT.rglob('*') if p.is_file())<=400000000
-    for name in ['index.html','decoder.js','reader.js','browse.js','app.js','app.css']:
+    for name in ['index.html','decoder.js','reader.js','browse.js','feature.js','app.js','app.css']:
         value=(ROOT/'docs/map'/name).read_text();assert not re.search(r'https?://',value);assert not re.search(r'(?:src|href)=["\x27]/',value)
     assert not (data/'snippets/web').exists()
     for p in (ROOT/'preregistration/round3').rglob('*'):

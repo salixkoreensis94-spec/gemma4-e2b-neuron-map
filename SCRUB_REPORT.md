@@ -88,3 +88,7 @@ The local fetch-stub matrix covers Korean/English at modeled desktop/375 px widt
 | Largest inflated map shard | 3523255 | 25,000,000 |
 
 Data, coverage, filtering and research values are unchanged. File sizes count bytes, not disk allocation.
+
+## Round 4 F2 / 4라운드 F2
+
+All 27 inherited identifier patterns scan the full stage and every decoded JSON gzip shard, including Round 4. Unexpected matches: 0. Snippet entries checked: 1060469. No matched text is printed or logged. Exact public attribution/row-ID exceptions remain the M5 exceptions; snippets have no identity exception. Feature candidates use the same whole-chunk, boundary and window filters and lexical concealment policy. / 전체 스테이지와 압축 해제한 모든 JSON에 기존 27개 패턴을 검사했습니다. 예상 밖 일치 0개이며 문장 내용은 출력하지 않았습니다. 특징 문장에도 같은 개인정보·문서 경계·가림 규칙을 적용합니다.

@@ -2,7 +2,7 @@
 import bisect,collections,gzip,json,math,struct
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
-BASE_FILES=['index.html','decoder.js','reader.js','browse.js','app.js','app.css','config.json','data/round3/stats/schema.json','data/round3/stats/manifest.json','data/round3/stats/layers.json','data/round3/stats/sources.json','data/round3/stats/round1.json','data/round3/stats/starting.json']
+BASE_FILES=['index.html','decoder.js','reader.js','browse.js','feature.js','app.js','app.css','config.json','data/round3/stats/schema.json','data/round3/stats/manifest.json','data/round3/stats/layers.json','data/round3/stats/sources.json','data/round3/stats/round1.json','data/round3/stats/starting.json','data/round4/metadata.json']
 def verify():
     stats=ROOT/'docs/map/data/round3/stats';dest=stats/'browse';meta=json.loads((dest/'metadata.json').read_text());raw=gzip.decompress((dest/'overview.bin.gz').read_bytes());assert len(raw)==337920*6 and meta['overview_record_bytes']==6 and meta['top_record_bytes']==25
     codes={'a':1,'b':2,'c':3,'u':4,'unknown':5};labels={(r['layer'],r['neuron']):codes[r['majority']] for r in (json.loads((stats/'ai_labels.json').read_text()) if (stats/'ai_labels.json').exists() else []) if r['kind']=='neuron'};at=0;l0=None;page_max=0;sum_page=0;pages=0;max_catalog=0
